@@ -49,8 +49,8 @@
 		[titleLabel setText:			[coordinate title]];
 		[titleLabel sizeToFit];
         
-		[titleLabel setFrame: CGRectMake(BOX_WIDTH / 2.0 - [titleLabel bounds].size.width / 2.0 - 4.0, 0, 
-                                         [titleLabel bounds].size.width + 8.0, [titleLabel bounds].size.height + 8.0)];
+		[titleLabel setFrame: CGRectMake(32, 0,
+                                         BOX_WIDTH, [titleLabel bounds].size.height + 8.0)];
         
         UILabel *distLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, BOX_WIDTH, LABEL_HEIGHT)];
 		
@@ -61,9 +61,9 @@
 		[distLbl sizeToFit];
         
         
-		[distLbl setFrame: CGRectMake(BOX_WIDTH / 2.0 - [titleLabel bounds].size.width / 2.0 - 4.0, 
+		[distLbl setFrame: CGRectMake(32,
                                       [distLbl bounds].size.height, 
-                                      [titleLabel bounds].size.width + 8.0, 
+                                      BOX_WIDTH,
                                       [distLbl bounds].size.height + 8.0)];
         
         UIImageView *pointView	= [[UIImageView alloc] initWithFrame:CGRectZero];
@@ -90,7 +90,7 @@
                                            [pointView image].size.width, 
                                            [pointView image].size.height)];
         
-        [pointView setBackgroundColor:[UIColor clearColor]];
+        [pointView setBackgroundColor:[UIColor redColor]];
         
 		[self addSubview:titleLabel];
         [self addSubview:distLbl];
@@ -99,7 +99,7 @@
 
 		[self addSubview:pointView];
 		[self setBackgroundColor:[UIColor colorWithWhite:0 alpha:BOX_ALPHA]];
-        self.frame = CGRectMake(0, 0, titleLabel.frame.size.width, titleLabel.frame.size.height);
+        //self.frame = CGRectMake(0, 0, titleLabel.frame.size.width, titleLabel.frame.size.height);
         
 		[titleLabel release];
         [distLbl release];
