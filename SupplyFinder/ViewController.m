@@ -51,7 +51,7 @@
     {
         // Deal with error...
     }else{
-        _pins = [[NSMutableArray alloc] initWithArray:array copyItems:YES];;
+        _pins = [[NSMutableArray alloc] initWithArray:array];;
         
     }
     
@@ -73,6 +73,55 @@
         self.infoViewController = nil;
     }
 }
+
+
+- (IBAction)addPointButtonClicked {
+    
+    [self addMarkerForAddress:@"Charleston, SC"];
+    
+}
+
+-(void)addMarkerForAddress:(NSString *)address
+{
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:address completionHandler:^(NSArray* placemarks, NSError* error){
+        
+        // TODO: Handle multiple results. (Show all results or select closest result)
+        if (placemarks && placemarks.count > 0) {
+            CLPlacemark *topResult = [placemarks objectAtIndex:0];
+            
+            // Create a MLPlacemark
+            //MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:topResult];
+            
+            NSManagedObjectContext *context = self.managedObjectContext;
+            Pin *newPin = [NSEntityDescription insertNewObjectForEntityForName:@"Pin" inManagedObjectContext:context];
+            newPin.title = [NSString stringWithFormat:@"%@, %@", topResult.locality, topResult.administrativeArea]; //city,state
+            newPin.coordinate = topResult.location.coordinate;
+            
+            NSError *error = nil;
+            if (![context save:&error]) {
+                // Replace this implementation with code to handle the error appropriately.
+                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+                abort();
+            }
+            
+            //Add the marker
+            [self.mapView addAnnotation:newPin];
+            
+            if (!_pins) {
+                _pins = [NSMutableArray arrayWithCapacity:5];
+            }
+            
+            [_pins addObject:newPin];
+            
+        }
+        
+    }];
+}
+
+
+
 - (IBAction)debugSwitchChanged:(id)sender
 {
     [[ContentManager sharedContentManager] setDebugMode:[self.debugSwitch isOn]];

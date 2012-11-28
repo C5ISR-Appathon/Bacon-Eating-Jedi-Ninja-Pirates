@@ -9,12 +9,12 @@
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QDe-3C-LH9">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="229" id="Iob-6e-9bz"/>
+                                    <constraint firstAttribute="height" constant="212" id="cgG-iu-ORB"/>
                                 </constraints>
                             </mapView>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AL8-uO-fCs">
@@ -55,20 +55,30 @@
                         <constraints>
                             <constraint firstItem="mki-7S-Zyy" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0V2-VH-YYE"/>
                             <constraint firstItem="Pbl-f0-HuX" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="1Nx-G3-WrO"/>
-                            <constraint firstAttribute="bottom" secondItem="AL8-uO-fCs" secondAttribute="bottom" constant="71" id="34G-RY-MJD"/>
-                            <constraint firstItem="mki-7S-Zyy" firstAttribute="top" secondItem="6mg-9y-mfP" secondAttribute="top" type="default" id="4BE-2a-vbZ"/>
                             <constraint firstItem="Pbl-f0-HuX" firstAttribute="top" secondItem="AL8-uO-fCs" secondAttribute="top" type="default" id="7FD-By-jdg"/>
                             <constraint firstAttribute="trailing" secondItem="AL8-uO-fCs" secondAttribute="trailing" constant="47" id="7r4-au-xW2"/>
+                            <constraint firstAttribute="bottom" secondItem="AL8-uO-fCs" secondAttribute="bottom" constant="63" id="BNO-Be-JOG"/>
                             <constraint firstItem="6mg-9y-mfP" firstAttribute="leading" secondItem="AL8-uO-fCs" secondAttribute="leading" type="default" id="D4L-0j-gyt"/>
                             <constraint firstItem="QDe-3C-LH9" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="DuQ-O2-vNs"/>
-                            <constraint firstAttribute="bottom" secondItem="ocd-kR-11c" secondAttribute="bottom" constant="123" id="Fcf-uH-jG4"/>
+                            <constraint firstItem="QDe-3C-LH9" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="OUx-3J-loZ"/>
                             <constraint firstItem="ocd-kR-11c" firstAttribute="centerX" secondItem="QDe-3C-LH9" secondAttribute="centerX" type="default" id="Zdv-Rb-foq"/>
+                            <constraint firstAttribute="bottom" secondItem="6mg-9y-mfP" secondAttribute="bottom" constant="18" id="dXt-n5-x6W"/>
                             <constraint firstItem="QDe-3C-LH9" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="ddF-KK-9Xk"/>
-                            <constraint firstAttribute="bottom" secondItem="6mg-9y-mfP" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="ngX-Ab-SBY"/>
-                            <constraint firstItem="QDe-3C-LH9" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="rtT-SM-fgA"/>
+                            <constraint firstItem="ocd-kR-11c" firstAttribute="top" secondItem="QDe-3C-LH9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="tPw-xs-hg6"/>
+                            <constraint firstAttribute="bottom" secondItem="mki-7S-Zyy" secondAttribute="bottom" constant="23" id="vVQ-hm-0VN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="e0B-av-sdM"/>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="Y0E-hg-fke"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="e0B-av-sdM">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tcQ-W7-VBH">
+                            <connections>
+                                <action selector="addPointButtonClicked" destination="2" id="NRa-DN-9ok"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="QDe-3C-LH9" id="ZaH-e3-thC"/>
