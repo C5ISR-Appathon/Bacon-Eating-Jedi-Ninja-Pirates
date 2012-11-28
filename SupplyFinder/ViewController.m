@@ -343,7 +343,7 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)annotationView didChangeDragState:(MKAnnotationViewDragState)newState fromOldState:(MKAnnotationViewDragState)oldState {
     
     
-    NSLog(@"State changed");
+    //NSLog(@"State changed");
     
     if(newState == MKAnnotationViewDragStateEnding) {
         //Pin dropped, update it's title with current location data
