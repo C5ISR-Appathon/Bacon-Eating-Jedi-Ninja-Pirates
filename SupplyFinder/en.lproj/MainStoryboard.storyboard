@@ -12,9 +12,34 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sY9-Sf-edg">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QDe-3C-LH9">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="229" id="Iob-6e-9bz"/>
+                                </constraints>
+                            </mapView>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AL8-uO-fCs">
+                                <connections>
+                                    <action selector="debugSwitchChanged:" destination="2" eventType="valueChanged" id="23Q-Kw-J1H"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6mg-9y-mfP">
+                                <connections>
+                                    <action selector="hookersTurnedOn:" destination="2" eventType="valueChanged" id="NZu-2d-kUL"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Debug" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbl-f0-HuX">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Hookers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mki-7S-Zyy">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocd-kR-11c">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Find nearest whorehouse">
+                                <state key="normal" title="Find the Whores">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -22,49 +47,31 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="whorehouseButtonPressed:" destination="2" eventType="touchUpInside" id="jyR-Y8-7sn"/>
+                                    <action selector="whorehouseButtonPressed:" destination="2" eventType="touchUpInside" id="cC4-7N-ToX"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Debug Mode" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5IP-Vm-jpz">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="How far are the hookers?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdg-PE-jXC">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZGM-c1-t5B">
-                                <connections>
-                                    <action selector="debugSwitchChanged:" destination="2" eventType="valueChanged" id="5ur-pO-M0o"/>
-                                </connections>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wZ8-vE-wsX">
-                                <connections>
-                                    <action selector="hookersTurnedOn:" destination="2" eventType="valueChanged" id="7EC-bP-iIT"/>
-                                </connections>
-                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wZ8-vE-wsX" firstAttribute="top" secondItem="Jdg-PE-jXC" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="KJd-6c-m9y"/>
-                            <constraint firstItem="sY9-Sf-edg" firstAttribute="top" secondItem="3" secondAttribute="top" constant="25" id="QMT-yl-CZJ"/>
-                            <constraint firstItem="5IP-Vm-jpz" firstAttribute="leading" secondItem="sY9-Sf-edg" secondAttribute="leading" type="default" id="Rz9-kJ-6cN"/>
-                            <constraint firstItem="ZGM-c1-t5B" firstAttribute="leading" secondItem="5IP-Vm-jpz" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="SF9-5g-uTw"/>
-                            <constraint firstItem="wZ8-vE-wsX" firstAttribute="leading" secondItem="ZGM-c1-t5B" secondAttribute="leading" type="default" id="YxY-gj-MOC"/>
-                            <constraint firstItem="5IP-Vm-jpz" firstAttribute="top" secondItem="3" secondAttribute="top" constant="112" id="bRT-qc-Aaf"/>
-                            <constraint firstItem="Jdg-PE-jXC" firstAttribute="top" secondItem="5IP-Vm-jpz" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="fBs-OX-S14"/>
-                            <constraint firstItem="sY9-Sf-edg" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="idB-bJ-21f"/>
-                            <constraint firstItem="Jdg-PE-jXC" firstAttribute="leading" secondItem="5IP-Vm-jpz" secondAttribute="leading" type="default" id="tAY-M9-6Tf"/>
-                            <constraint firstItem="ZGM-c1-t5B" firstAttribute="top" secondItem="5IP-Vm-jpz" secondAttribute="top" type="default" id="wji-wd-okA"/>
+                            <constraint firstItem="mki-7S-Zyy" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0V2-VH-YYE"/>
+                            <constraint firstItem="Pbl-f0-HuX" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="1Nx-G3-WrO"/>
+                            <constraint firstAttribute="bottom" secondItem="AL8-uO-fCs" secondAttribute="bottom" constant="71" id="34G-RY-MJD"/>
+                            <constraint firstItem="mki-7S-Zyy" firstAttribute="top" secondItem="6mg-9y-mfP" secondAttribute="top" type="default" id="4BE-2a-vbZ"/>
+                            <constraint firstItem="Pbl-f0-HuX" firstAttribute="top" secondItem="AL8-uO-fCs" secondAttribute="top" type="default" id="7FD-By-jdg"/>
+                            <constraint firstAttribute="trailing" secondItem="AL8-uO-fCs" secondAttribute="trailing" constant="47" id="7r4-au-xW2"/>
+                            <constraint firstItem="6mg-9y-mfP" firstAttribute="leading" secondItem="AL8-uO-fCs" secondAttribute="leading" type="default" id="D4L-0j-gyt"/>
+                            <constraint firstItem="QDe-3C-LH9" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="DuQ-O2-vNs"/>
+                            <constraint firstAttribute="bottom" secondItem="ocd-kR-11c" secondAttribute="bottom" constant="123" id="Fcf-uH-jG4"/>
+                            <constraint firstItem="ocd-kR-11c" firstAttribute="centerX" secondItem="QDe-3C-LH9" secondAttribute="centerX" type="default" id="Zdv-Rb-foq"/>
+                            <constraint firstItem="QDe-3C-LH9" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="ddF-KK-9Xk"/>
+                            <constraint firstAttribute="bottom" secondItem="6mg-9y-mfP" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="ngX-Ab-SBY"/>
+                            <constraint firstItem="QDe-3C-LH9" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="rtT-SM-fgA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="e0B-av-sdM"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="debugSwitch" destination="ZGM-c1-t5B" id="MH9-5x-sZO"/>
-                        <outlet property="hookerSwitch" destination="wZ8-vE-wsX" id="ITX-9V-dd8"/>
+                        <outlet property="mapView" destination="QDe-3C-LH9" id="ZaH-e3-thC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -91,6 +98,24 @@
             <point key="canvasLocation" x="307" y="231"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="closeARButtonClicked:"/>
+                <relationship kind="action" name="closeButtonClicked:"/>
+                <relationship kind="action" name="debugSwitchChanged:"/>
+                <relationship kind="action" name="hookersTurnedOn:"/>
+                <relationship kind="action" name="whorehouseButtonPressed:"/>
+                <relationship kind="outlet" name="debugSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="hookerSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

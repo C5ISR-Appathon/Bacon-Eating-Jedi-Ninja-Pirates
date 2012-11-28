@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Pin.h"
 #import "ContentManager.h"
 #import "ARKit.h"
 #import "AppDelegate.h"
@@ -171,8 +172,5 @@
     return locationArray;
     
 }
-
-
-
 
 @end
