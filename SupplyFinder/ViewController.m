@@ -185,14 +185,14 @@
         [errorLabel setTextAlignment:NSTextAlignmentCenter];
         [[infovc view] addSubview:errorLabel];
         
-        UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 90, 30)];
+        UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, 90, 30)];
         [closeButton setTitle:@"Close" forState:UIControlStateNormal];
         
         [closeButton setBackgroundColor:[UIColor blueColor]];
         [closeButton addTarget:self action:@selector(closeButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         [[infovc view] addSubview:closeButton];
         
-        UIButton *closeARButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 50, 120, 30)];
+        UIButton *closeARButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 70, 120, 30)];
         [closeARButton setTitle:@"Close AR View" forState:UIControlStateNormal];
         
         [closeARButton setBackgroundColor:[UIColor blackColor]];
