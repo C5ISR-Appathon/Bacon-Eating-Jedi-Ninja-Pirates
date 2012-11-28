@@ -85,8 +85,7 @@
 
 - (IBAction)donePressed:(id)sender {
     
-    
-    [self addMarkerForAddress:@"Charleston, SC"];
+    [self addMarkerToUserLocation];
     
     NSError *error = nil;
     if (![_managedObjectContext save:&error]) {
