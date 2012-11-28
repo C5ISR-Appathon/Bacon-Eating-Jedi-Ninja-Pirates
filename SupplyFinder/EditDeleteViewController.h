@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Pin.h"
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface EditDeleteViewController : UIViewController
 
@@ -19,5 +20,9 @@
 @property (strong, nonatomic) Pin *pin;
 
 @property (strong, nonatomic) id delegate;
+
+
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) AppDelegate *appDelegate;
 
 @end

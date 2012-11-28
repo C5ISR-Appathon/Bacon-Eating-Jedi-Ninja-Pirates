@@ -35,7 +35,7 @@
     _pin = [NSEntityDescription insertNewObjectForEntityForName:@"Pin" inManagedObjectContext:_managedObjectContext];
     
     
-    
+    [_doneButton setEnabled:NO];
 
 }
 
@@ -46,8 +46,9 @@
 }
 
 - (IBAction)segmentChanged:(id)sender {
-    
-    
+        
+    [_doneButton setEnabled:YES];
+
     NSInteger selectedIndex = [_categorySegment selectedSegmentIndex];
     
     [_pin setCategory:[NSNumber numberWithInteger:selectedIndex]];

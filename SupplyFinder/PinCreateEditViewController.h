@@ -29,5 +29,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *categoryImage;
 
 @property (strong, nonatomic) IBOutlet UITextField *titleField;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
 
 @end

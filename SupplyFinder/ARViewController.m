@@ -30,6 +30,15 @@
  	return self;
 }
 
+//-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+//    
+//    if () {
+//    
+//    
+//    
+//}
+
+
 - (void)loadView {
     
 	AugmentedRealityController*  arc = [[AugmentedRealityController alloc] initWithViewController:self withDelgate:self];
@@ -40,12 +49,14 @@
 	[arc setRotateViewsBasedOnPerspective:YES];
     [arc updateDebugMode:![arc debugMode]];
     
-    
     //add Nightvision view
     
-    _nightVisionView = [[UIView alloc] initWithFrame:self.view.frame];
+    _nightVisionView = [[UIView alloc] initWithFrame:self.view.bounds];
     _nightVisionView.backgroundColor = [UIColor clearColor];
-    [[self view] addSubview:_nightVisionView];
+    
+    [self.view addSubview:_nightVisionView];
+    
+    
     
     [_nightVisionView release];
     
@@ -77,15 +88,15 @@
     [closeBtn release];
     
     
-    UIButton *nvBtn = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width-120), 20, 120, 30)];
-    [nvBtn setTitle:@"NV Mode" forState:UIControlStateNormal];
-    [nvBtn setBackgroundColor:[UIColor greenColor]];
-    [nvBtn addTarget:self action:@selector(enableNightVision:) forControlEvents:UIControlEventTouchUpInside];
-    [[self view] addSubview:nvBtn];
+    _nightVisionButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width-120), 20, 120, 30)];
+    [_nightVisionButton setTitle:@"NV Mode" forState:UIControlStateNormal];
+    [_nightVisionButton setBackgroundColor:[UIColor greenColor]];
+    [_nightVisionButton addTarget:self action:@selector(enableNightVision:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_nightVisionButton];
     
     nvEnabled = NO;
     
-    [nvBtn release];
+    [_nightVisionButton release];
     
     
     
@@ -134,18 +145,21 @@
 }
 
 -(void) didUpdateHeading:(CLHeading *)newHeading {
-    NSLog(@"Heading Updated");
+    //NSLog(@"Heading Updated");
 
 }
 -(void) didUpdateLocation:(CLLocation *)newLocation {
-    NSLog(@"Location Updated");
+    //NSLog(@"Location Updated");
 
 }
 -(void) didUpdateOrientation:(UIDeviceOrientation) orientation {
     NSLog(@"Orientation Updated");
     
-    if (orientation == UIDeviceOrientationPortrait)
-        NSLog(@"Protrait");
+    if (orientation == UIDeviceOrientationPortrait) {
+        
+    }
+    _nightVisionView.frame =  self.view.bounds;
+    _nightVisionButton.frame = CGRectMake((self.view.bounds.size.width-120), 20, 120, 30);
 
 }
 
