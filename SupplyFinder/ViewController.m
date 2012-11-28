@@ -236,8 +236,7 @@
         MKPinAnnotationView* pinView = (MKPinAnnotationView *)
         //PinAnnotationView* pinView = (PinAnnotationView *)
         [theMapView dequeueReusableAnnotationViewWithIdentifier:PinAnnotationIdentifier];
-        if (!pinView)
-        {
+        
             // if an existing pin view was not available, create one
             MKPinAnnotationView* customPinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PinAnnotationIdentifier];
             //PinAnnotationView* customPinView = [[PinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PinAnnotationIdentifier];
@@ -245,6 +244,27 @@
             customPinView.animatesDrop = YES;
             customPinView.canShowCallout = YES;
             customPinView.draggable = YES;
+        
+        NSLog([[(Pin *)annotation category]stringValue]);
+        
+            if( [[(Pin *)annotation category] intValue] == 0 ){
+                
+                customPinView.image = [UIImage imageNamed:@"food.png"];
+
+            }else if( [[(Pin *)annotation category] intValue] == 1 ){
+                
+                customPinView.image = [UIImage imageNamed:@"gun icon.png"];
+                
+            }else if( [[(Pin *)annotation category] intValue] == 2 ){
+                
+                customPinView.image = [UIImage imageNamed:@"oil icon.png"];
+                
+            }else if( [[(Pin *)annotation category] intValue] == 3 ){
+                
+                customPinView.image = [UIImage imageNamed:@"zombie.png"];
+                
+            }
+            
             
             // add a detail disclosure button to the callout which will open a new view controller page
             //
@@ -260,12 +280,10 @@
              */
             
             return customPinView;
-        }
-        else
-        {
-            pinView.annotation = annotation;
-        }
-        return pinView;
+        
+            //pinView.annotation = annotation;
+        //}
+        //return pinView;
     }
     return nil;
 }
@@ -310,18 +328,18 @@
 }
 
 
-- (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
-    MKCoordinateRegion region;
-    MKCoordinateSpan span;
-    span.latitudeDelta = 0.095;
-    span.longitudeDelta = 0.095;
-    CLLocationCoordinate2D location;
-    location.latitude = aUserLocation.coordinate.latitude;
-    location.longitude = aUserLocation.coordinate.longitude;
-    region.span = span;
-    region.center = location;
-    [aMapView setRegion:region animated:YES];
-}
+//- (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
+//    MKCoordinateRegion region;
+//    MKCoordinateSpan span;
+//    span.latitudeDelta = 0.095;
+//    span.longitudeDelta = 0.095;
+//    CLLocationCoordinate2D location;
+//    location.latitude = aUserLocation.coordinate.latitude;
+//    location.longitude = aUserLocation.coordinate.longitude;
+//    region.span = span;
+//    region.center = location;
+//    [aMapView setRegion:region animated:YES];
+//}
 
 
 

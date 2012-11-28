@@ -49,16 +49,16 @@
     
     if(selectedIndex == 0){
         //food
-        
+        [_categoryImage setImage:[UIImage imageNamed:@"food.png"]];
     }else if(selectedIndex == 1){
         //weapons
-        
+        [_categoryImage setImage:[UIImage imageNamed:@"gun icon.png"]];
     }else if(selectedIndex == 2){
         //fuel
-        
+        [_categoryImage setImage:[UIImage imageNamed:@"oil icon.png"]];
     }else if(selectedIndex == 3){
         //zombies
-        
+        [_categoryImage setImage:[UIImage imageNamed:@"zombie.png"]];
     }
 }
 

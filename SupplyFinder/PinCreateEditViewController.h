@@ -25,5 +25,6 @@
 @property (strong, nonatomic) AppDelegate *appDelegate;
 
 @property (strong, nonatomic) id<PinCreateEditDelegate> delegate;
+@property (strong, nonatomic) IBOutlet UIImageView *categoryImage;
 
 @end
