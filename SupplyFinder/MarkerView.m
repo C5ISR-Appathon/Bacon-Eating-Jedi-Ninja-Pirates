@@ -80,7 +80,9 @@
             case 3:
                 [pointView setImage:[UIImage imageNamed:@"zombie.png"]];
                 break;
-                
+            case 4:
+                [pointView setImage:[UIImage imageNamed:@"companionship.png"]];
+                break;
             default:
                 break;
         }

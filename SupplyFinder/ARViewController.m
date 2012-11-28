@@ -11,6 +11,7 @@
 #import "GEOLocations.h"
 #import "MarkerView.h"
 #import "ContentManager.h"
+#import <AVFoundation/AVFoundation.h>
 
 @implementation ARViewController
 
@@ -61,9 +62,20 @@
 		}
 	}
     
+    //  Nightvision sound
+    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Splinter_Cell-Night_Vision"
+                                                                        ofType:@"mp3"]];
+    
+    AVAudioPlayer *audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [[AVAudioSession sharedInstance] setActive:YES error:nil];
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [audioPlayer play];
+    
     [self setAgController:arc];
     [arc release];
 	[locations release];
+        
 }
 
 - (IBAction)closeButtonClicked:(id)sender {

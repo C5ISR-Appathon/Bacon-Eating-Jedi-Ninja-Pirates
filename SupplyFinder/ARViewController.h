@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "ARLocationDelegate.h"
 #import "ARViewProtocol.h"
+#import <AVFoundation/AVFoundation.h>
 
 
 @class AugmentedRealityController;
 
-@interface ARViewController : UIViewController<ARMarkerDelegate, ARDelegate> {
+@interface ARViewController : UIViewController<ARMarkerDelegate, ARDelegate, AVAudioPlayerDelegate> {
 	AugmentedRealityController	*agController;
 	id<ARLocationDelegate> delegate;
 }

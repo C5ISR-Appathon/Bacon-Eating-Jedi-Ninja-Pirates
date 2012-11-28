@@ -50,6 +50,7 @@
 		C109B6D6166659B600D2A140 /* ARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C109B6D5166659B600D2A140 /* ARViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C109B6DB16665AFC00D2A140 /* ContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C109B6D816665AFC00D2A140 /* ContentManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C109B6DC16665AFC00D2A140 /* MarkerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C109B6DA16665AFC00D2A140 /* MarkerView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C1664FC01666CE71005869E6 /* Splinter_Cell-Night_Vision.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1664FBF1666CE71005869E6 /* Splinter_Cell-Night_Vision.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +118,7 @@
 		C109B6D916665AFC00D2A140 /* MarkerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkerView.h; sourceTree = "<group>"; };
 		C109B6DA16665AFC00D2A140 /* MarkerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkerView.m; sourceTree = "<group>"; };
 		C109B6DD16665B1600D2A140 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
+		C1664FBF1666CE71005869E6 /* Splinter_Cell-Night_Vision.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Splinter_Cell-Night_Vision.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 		24F0346F1666513B008ABBCE /* SupplyFinder */ = {
 			isa = PBXGroup;
 			children = (
+				C1664FBD1666CE67005869E6 /* Sounds */,
 				985E2C9D1666810A00E9BB8B /* Resources */,
 				C109B6D21666599600D2A140 /* AR Files */,
 				C109B6B4166656F000D2A140 /* Other Sources */,
@@ -281,6 +284,14 @@
 			name = Managers;
 			sourceTree = "<group>";
 		};
+		C1664FBD1666CE67005869E6 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				C1664FBF1666CE71005869E6 /* Splinter_Cell-Night_Vision.mp3 */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -350,6 +361,7 @@
 				24A6848C1666B8C7006C3E7D /* binocular.png in Resources */,
 				24A684921666C3CA006C3E7D /* Icon@2x.png in Resources */,
 				24A684941666C3CF006C3E7D /* Icon.png in Resources */,
+				C1664FC01666CE71005869E6 /* Splinter_Cell-Night_Vision.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
