@@ -15,6 +15,11 @@
 		24A6846916668A06006C3E7D /* gun icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A6846416668A06006C3E7D /* gun icon.png */; };
 		24A6846A16668A06006C3E7D /* oil icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A6846516668A06006C3E7D /* oil icon.png */; };
 		24A6846B16668A06006C3E7D /* zombie.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A6846616668A06006C3E7D /* zombie.png */; };
+		24A6847216668CF4006C3E7D /* companionship@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A6846D16668CF4006C3E7D /* companionship@2x.png */; };
+		24A6847316668CF4006C3E7D /* food@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A6846E16668CF4006C3E7D /* food@2x.png */; };
+		24A6847416668CF4006C3E7D /* gun icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A6846F16668CF4006C3E7D /* gun icon@2x.png */; };
+		24A6847516668CF4006C3E7D /* oil icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A6847016668CF4006C3E7D /* oil icon@2x.png */; };
+		24A6847616668CF4006C3E7D /* zombie@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A6847116668CF4006C3E7D /* zombie@2x.png */; };
 		24F0346A1666513B008ABBCE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F034691666513B008ABBCE /* UIKit.framework */; };
 		24F0346C1666513B008ABBCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F0346B1666513B008ABBCE /* Foundation.framework */; };
 		24F0346E1666513B008ABBCE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F0346D1666513B008ABBCE /* CoreGraphics.framework */; };
@@ -51,6 +56,11 @@
 		24A6846416668A06006C3E7D /* gun icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gun icon.png"; sourceTree = "<group>"; };
 		24A6846516668A06006C3E7D /* oil icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oil icon.png"; sourceTree = "<group>"; };
 		24A6846616668A06006C3E7D /* zombie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zombie.png; sourceTree = "<group>"; };
+		24A6846D16668CF4006C3E7D /* companionship@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "companionship@2x.png"; sourceTree = "<group>"; };
+		24A6846E16668CF4006C3E7D /* food@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "food@2x.png"; sourceTree = "<group>"; };
+		24A6846F16668CF4006C3E7D /* gun icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gun icon@2x.png"; sourceTree = "<group>"; };
+		24A6847016668CF4006C3E7D /* oil icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oil icon@2x.png"; sourceTree = "<group>"; };
+		24A6847116668CF4006C3E7D /* zombie@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zombie@2x.png"; sourceTree = "<group>"; };
 		24F034651666513B008ABBCE /* SupplyFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SupplyFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F034691666513B008ABBCE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		24F0346B1666513B008ABBCE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -174,11 +184,6 @@
 		24F034701666513B008ABBCE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				24A6846216668A06006C3E7D /* companionship.png */,
-				24A6846316668A06006C3E7D /* food.png */,
-				24A6846416668A06006C3E7D /* gun icon.png */,
-				24A6846516668A06006C3E7D /* oil icon.png */,
-				24A6846616668A06006C3E7D /* zombie.png */,
 				24F034711666513B008ABBCE /* SupplyFinder-Info.plist */,
 				24F034721666513B008ABBCE /* InfoPlist.strings */,
 				24F034751666513B008ABBCE /* main.m */,
@@ -193,6 +198,16 @@
 		985E2C9D1666810A00E9BB8B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				24A6846D16668CF4006C3E7D /* companionship@2x.png */,
+				24A6846E16668CF4006C3E7D /* food@2x.png */,
+				24A6846F16668CF4006C3E7D /* gun icon@2x.png */,
+				24A6847016668CF4006C3E7D /* oil icon@2x.png */,
+				24A6847116668CF4006C3E7D /* zombie@2x.png */,
+				24A6846216668A06006C3E7D /* companionship.png */,
+				24A6846316668A06006C3E7D /* food.png */,
+				24A6846416668A06006C3E7D /* gun icon.png */,
+				24A6846516668A06006C3E7D /* oil icon.png */,
+				24A6846616668A06006C3E7D /* zombie.png */,
 				985E2C9B166680FF00E9BB8B /* placeholder.jpeg */,
 			);
 			name = Resources;
@@ -308,6 +323,11 @@
 				24A6846916668A06006C3E7D /* gun icon.png in Resources */,
 				24A6846A16668A06006C3E7D /* oil icon.png in Resources */,
 				24A6846B16668A06006C3E7D /* zombie.png in Resources */,
+				24A6847216668CF4006C3E7D /* companionship@2x.png in Resources */,
+				24A6847316668CF4006C3E7D /* food@2x.png in Resources */,
+				24A6847416668CF4006C3E7D /* gun icon@2x.png in Resources */,
+				24A6847516668CF4006C3E7D /* oil icon@2x.png in Resources */,
+				24A6847616668CF4006C3E7D /* zombie@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
