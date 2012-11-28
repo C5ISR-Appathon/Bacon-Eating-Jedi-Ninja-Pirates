@@ -29,4 +29,6 @@
 
 @property (strong, nonatomic) NSMutableArray *pins;
 
+//@property (strong, nonatomic) Pin *selectedPin;
+
 @end

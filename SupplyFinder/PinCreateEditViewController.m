@@ -31,7 +31,10 @@
     _appDelegate = [[UIApplication sharedApplication] delegate];
     _managedObjectContext = [_appDelegate managedObjectContext];
     
+
     _pin = [NSEntityDescription insertNewObjectForEntityForName:@"Pin" inManagedObjectContext:_managedObjectContext];
+    
+    
     
 
 }
@@ -83,7 +86,6 @@
 - (IBAction)donePressed:(id)sender {
     
     [self addMarkerToUserLocation];
-    
     
     NSError *error = nil;
     if (![_managedObjectContext save:&error]) {
