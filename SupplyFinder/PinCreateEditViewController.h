@@ -27,4 +27,8 @@
 @property (strong, nonatomic) id<PinCreateEditDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UIImageView *categoryImage;
 
+@property (strong, nonatomic) IBOutlet UITextField *titleField;
+@property (strong, nonatomic) IBOutlet UITextField *latitude;
+@property (strong, nonatomic) IBOutlet UITextField *longitude;
+
 @end

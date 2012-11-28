@@ -32,6 +32,8 @@
     _managedObjectContext = [_appDelegate managedObjectContext];
     
     _pin = [NSEntityDescription insertNewObjectForEntityForName:@"Pin" inManagedObjectContext:_managedObjectContext];
+    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,8 +76,13 @@
             
             // Create a MLPlacemark
             //MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:topResult];
-                        
-            _pin.title = [NSString stringWithFormat:@"%@, %@", topResult.locality, topResult.administrativeArea]; //city,state
+            
+            
+            if(![[_titleField text] isEqualToString:@""]){
+                [_pin setTitle:[_titleField text]];
+            }else{
+                _pin.title = [NSString stringWithFormat:@"%@, %@", topResult.locality, topResult.administrativeArea]; //city,state
+            }
             _pin.coordinate = topResult.location.coordinate;
             
             
@@ -89,6 +96,7 @@
 - (IBAction)donePressed:(id)sender {
     
     [self addMarkerForAddress:@"Charleston, SC"];
+    
     
     NSError *error = nil;
     if (![_managedObjectContext save:&error]) {
