@@ -67,33 +67,18 @@
     }
 }
 
--(void)addMarkerForAddress:(NSString *)address
+-(void)addMarkerToUserLocation
 {
+
     
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder geocodeAddressString:address completionHandler:^(NSArray* placemarks, NSError* error){
-        
-        // TODO: Handle multiple results. (Show all results or select closest result)
-        if (placemarks && placemarks.count > 0) {
-            CLPlacemark *topResult = [placemarks objectAtIndex:0];
-            
-            // Create a MLPlacemark
-            //MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:topResult];
-            
-            
-            if(![[_titleField text] isEqualToString:@""]){
-                [_pin setTitle:[_titleField text]];
-            }else{
-                _pin.title = [NSString stringWithFormat:@"%@, %@", topResult.locality, topResult.administrativeArea]; //city,state
-            }
-            _pin.coordinate = [[[[(ViewController *)_delegate mapView] userLocation] location] coordinate];
-            
-            //_pin.coordinate = topResult.location.coordinate;
-            
-            
-        }
-        
-    }];
+    if(![[_titleField text] isEqualToString:@""]){
+        [_pin setTitle:[_titleField text]];
+    }else{
+        _pin.title = @"N/A";
+    }
+    
+    _pin.coordinate = [[[[(ViewController *)_delegate mapView] userLocation] location] coordinate];
+
     
 }
 

@@ -9,12 +9,14 @@
 #import "ARViewProtocol.h"
 #import "ARGeoCoordinate.h"
 #import "MarkerView.h"
+#import <QuartzCore/QuartzCore.h>
 
 
-#define BOX_WIDTH 150
-#define BOX_HEIGHT 100
+
+#define BOX_WIDTH 300
+#define BOX_HEIGHT 50
 #define BOX_GAP 10
-#define BOX_ALPHA 0.8
+#define BOX_ALPHA 0.5
 #define LABEL_HEIGHT 20.0
 
 
@@ -25,60 +27,81 @@
 @synthesize delegate;
 @synthesize lblDistance;
 
-- (id)initForCoordinate:(ARGeoCoordinate *)coordinate withDelgate:(id<ARMarkerDelegate>) aDelegate {
+- (id)initForCoordinate:(ARGeoCoordinate *)coordinate withDelgate:(id<ARMarkerDelegate>) aDelegate withCategory:(NSNumber *)category {
     
 	[self setCoordinateInfo:coordinate];
     [self setDelegate:aDelegate];
-    
 	CGRect theFrame = CGRectMake(0, 0, BOX_WIDTH, BOX_HEIGHT);
 	
 	if ((self = [super initWithFrame:theFrame])) {
         
         [self setUserInteractionEnabled:YES]; // Allow for touches
         
+        //  Rounded corners
+        self.layer.cornerRadius = 5;
+        self.layer.masksToBounds = YES;
+        
 		UILabel *titleLabel	= [[UILabel alloc] initWithFrame:CGRectMake(0, 0, BOX_WIDTH, 20.0)];
-		
-		[titleLabel setBackgroundColor: [UIColor colorWithWhite:.3 alpha:BOX_ALPHA]];
+
+		[titleLabel setBackgroundColor: [UIColor clearColor]];
 		[titleLabel setTextColor:		[UIColor whiteColor]];
 		[titleLabel setTextAlignment:	NSTextAlignmentCenter];
 		[titleLabel setText:			[coordinate title]];
 		[titleLabel sizeToFit];
-
         
-		[titleLabel setFrame: CGRectMake(BOX_WIDTH / 2.0 - [titleLabel bounds].size.width / 2.0 - 4.0, 0, 
-                                         [titleLabel bounds].size.width + 8.0, [titleLabel bounds].size.height + 8.0)];
+		[titleLabel setFrame: CGRectMake(32, 0,
+                                         BOX_WIDTH, [titleLabel bounds].size.height + 8.0)];
         
         UILabel *distLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, BOX_WIDTH, LABEL_HEIGHT)];
 		
-		[distLbl setBackgroundColor: [UIColor colorWithWhite:.3 alpha:BOX_ALPHA]];
+		[distLbl setBackgroundColor: [UIColor clearColor]];
 		[distLbl setTextColor:		[UIColor whiteColor]];
 		[distLbl setTextAlignment:	NSTextAlignmentCenter];
 		[distLbl setText:			[NSString stringWithFormat:@"%g", [coordinate distanceFromOrigin]]];
 		[distLbl sizeToFit];
         
         
-		[distLbl setFrame: CGRectMake(BOX_WIDTH / 2.0 - [titleLabel bounds].size.width / 2.0 - 4.0, 
+		[distLbl setFrame: CGRectMake(32,
                                       [distLbl bounds].size.height, 
-                                      [titleLabel bounds].size.width + 8.0, 
+                                      BOX_WIDTH,
                                       [distLbl bounds].size.height + 8.0)];
         
+        UIImageView *pointView	= [[UIImageView alloc] initWithFrame:CGRectZero];
+        switch ([category intValue]) {
+            case 0:
+                [pointView setImage:[UIImage imageNamed:@"food.png"]];
+                break;
+            case 1:
+                [pointView setImage:[UIImage imageNamed:@"gun icon.png"]];
+                break;
+            case 2:
+                [pointView setImage:[UIImage imageNamed:@"oil icon.png"]];
+                break;
+            case 3:
+                [pointView setImage:[UIImage imageNamed:@"zombie.png"]];
+                break;
+                
+            default:
+                break;
+        }
         
-		
-		UIImageView *pointView	= [[UIImageView alloc] initWithFrame:CGRectZero];
-		[pointView setImage:[UIImage imageNamed:@"zombie.png"]];
+//		[pointView setFrame:	CGRectMake((int)(titleLabel.frame.origin.x - [pointView image].size.width),
+//                                           (int)(titleLabel.frame.origin.y + [pointView image].size.height / 2.0),
+//                                           [pointView image].size.width, 
+//                                           [pointView image].size.height)];
         
-		[pointView setFrame:	CGRectMake((int)(BOX_WIDTH / 2.0 - [pointView image].size.width / 2.0), 
-                                           (int)(BOX_HEIGHT / 2.0 - [pointView image].size.height / 2.0), 
-                                           [pointView image].size.width, 
-                                           [pointView image].size.height)];
-		
+        pointView.frame = CGRectMake(10,10, pointView.image.size.width, pointView.image.size.height);
+        
+        [pointView setBackgroundColor:[UIColor greenColor]];
+        
 		[self addSubview:titleLabel];
         [self addSubview:distLbl];
         
         [self setLblDistance:distLbl];
 
 		[self addSubview:pointView];
-		[self setBackgroundColor:[UIColor clearColor]];
+		[self setBackgroundColor:[UIColor colorWithWhite:0 alpha:BOX_ALPHA]];
+        //self.frame = CGRectMake(0, 0, titleLabel.frame.size.width, titleLabel.frame.size.height);
         
 		[titleLabel release];
         [distLbl release];

@@ -219,6 +219,8 @@
         
 		[testImage setFrame:CGRectMake(50, 70, 120, 30)];
         
+        [[infovc view] addSubview:testImage];
+        
         
         [[appDelegate window] addSubview:[infovc view]];
         
@@ -234,7 +236,7 @@
     
     for(Pin *pin in self.pins) {
         tempLocation = [[CLLocation alloc] initWithLatitude:pin.coordinate.latitude longitude:pin.coordinate.longitude];
-        tempCoordinate = [ARGeoCoordinate coordinateWithLocation:tempLocation locationTitle:pin.title];
+        tempCoordinate = [ARGeoCoordinate coordinateWithLocation:tempLocation locationTitle:pin.title ofCategory:pin.category];
         [locationArray addObject:tempCoordinate];
         
     }
@@ -365,7 +367,7 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)annotationView didChangeDragState:(MKAnnotationViewDragState)newState fromOldState:(MKAnnotationViewDragState)oldState {
     
     
-    NSLog(@"State changed");
+    //NSLog(@"State changed");
     
     if(newState == MKAnnotationViewDragStateEnding) {
         //Pin dropped, update it's title with current location data
