@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		248C6010166654F6002743D0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 248C600F166654F6002743D0 /* MapKit.framework */; };
 		24F0346A1666513B008ABBCE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F034691666513B008ABBCE /* UIKit.framework */; };
 		24F0346C1666513B008ABBCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F0346B1666513B008ABBCE /* Foundation.framework */; };
 		24F0346E1666513B008ABBCE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F0346D1666513B008ABBCE /* CoreGraphics.framework */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		248C600F166654F6002743D0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		24F034651666513B008ABBCE /* SupplyFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SupplyFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F034691666513B008ABBCE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		24F0346B1666513B008ABBCE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				248C6010166654F6002743D0 /* MapKit.framework in Frameworks */,
 				24F0346A1666513B008ABBCE /* UIKit.framework in Frameworks */,
 				24F0346C1666513B008ABBCE /* Foundation.framework in Frameworks */,
 				24F0346E1666513B008ABBCE /* CoreGraphics.framework in Frameworks */,
@@ -72,6 +75,7 @@
 		24F034681666513B008ABBCE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				248C600F166654F6002743D0 /* MapKit.framework */,
 				24F034691666513B008ABBCE /* UIKit.framework */,
 				24F0346B1666513B008ABBCE /* Foundation.framework */,
 				24F0346D1666513B008ABBCE /* CoreGraphics.framework */,
@@ -290,6 +294,7 @@
 				24F0348B1666513B008ABBCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
