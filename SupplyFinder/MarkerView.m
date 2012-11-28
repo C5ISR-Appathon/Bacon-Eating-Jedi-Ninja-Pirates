@@ -85,12 +85,14 @@
                 break;
         }
         
-		[pointView setFrame:	CGRectMake((int)(titleLabel.frame.origin.x - [pointView image].size.width),
-                                           (int)(titleLabel.frame.origin.y + [pointView image].size.height / 2.0),
-                                           [pointView image].size.width, 
-                                           [pointView image].size.height)];
+//		[pointView setFrame:	CGRectMake((int)(titleLabel.frame.origin.x - [pointView image].size.width),
+//                                           (int)(titleLabel.frame.origin.y + [pointView image].size.height / 2.0),
+//                                           [pointView image].size.width, 
+//                                           [pointView image].size.height)];
         
-        [pointView setBackgroundColor:[UIColor redColor]];
+        pointView.frame = CGRectMake(10,10, pointView.image.size.width, pointView.image.size.height);
+        
+        [pointView setBackgroundColor:[UIColor greenColor]];
         
 		[self addSubview:titleLabel];
         [self addSubview:distLbl];
