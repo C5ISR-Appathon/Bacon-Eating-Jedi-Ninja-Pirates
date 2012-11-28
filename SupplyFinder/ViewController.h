@@ -25,7 +25,7 @@
 @property (strong, nonatomic) UIViewController *infoViewController;
 
 @property (weak, nonatomic) IBOutlet UISwitch *debugSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *hookerSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *scalingSwitch;
 
 @property (strong, nonatomic) NSMutableArray *pins;
 
