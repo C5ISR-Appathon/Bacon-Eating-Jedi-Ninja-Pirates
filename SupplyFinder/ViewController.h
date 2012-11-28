@@ -10,14 +10,16 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <CoreData/CoreData.h>
-
+#import "AppDelegate.h"
 
 @interface ViewController : UIViewController <MKMapViewDelegate, NSFetchedResultsControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) AppDelegate *appDelegate;
 
-@property (strong, nonatomic) NSArray *pins;
+
+@property (strong, nonatomic) NSMutableArray *pins;
 
 @end
