@@ -55,6 +55,10 @@
         
     }
     
+    [self.debugSwitch setOn:NO animated:YES];
+    [self.hookerSwitch setOn:YES animated:YES];
+    [[ContentManager sharedContentManager] setDebugMode:[self.debugSwitch isOn]];
+    [[ContentManager sharedContentManager] setScaleOnDistance:[self.hookerSwitch isOn]];
 }
 
 - (void)didReceiveMemoryWarning
