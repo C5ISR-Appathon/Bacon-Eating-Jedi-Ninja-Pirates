@@ -2,7 +2,7 @@
 //  Pin.m
 //  SupplyFinder
 //
-//  Created by Bobby Schuchert on 11/28/12.
+//  Created by Jonathan Spohn on 11/28/12.
 //  Copyright (c) 2012 SPARC. All rights reserved.
 //
 
@@ -14,17 +14,6 @@
 @dynamic latitude;
 @dynamic longitude;
 @dynamic title;
-
-
-- (CLLocationCoordinate2D)coordinate {
-    CLLocationCoordinate2D cor = CLLocationCoordinate2DMake([self.latitude doubleValue],[self.longitude doubleValue]);
-    return cor;
-}
-
-- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate {
-    self.latitude =[NSNumber numberWithDouble:newCoordinate.latitude];
-    self.longitude = [NSNumber numberWithDouble:newCoordinate.longitude];
-}
-
+@dynamic category;
 
 @end
