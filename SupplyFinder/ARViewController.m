@@ -68,7 +68,7 @@
 
 - (IBAction)closeButtonClicked:(id)sender {
     [self setAgController:nil];
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 

@@ -16,6 +16,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="212" id="cgG-iu-ORB"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="emi-ze-cdl"/>
+                                </connections>
                             </mapView>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AL8-uO-fCs">
                                 <connections>
@@ -24,7 +27,7 @@
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6mg-9y-mfP">
                                 <connections>
-                                    <action selector="hookersTurnedOn:" destination="2" eventType="valueChanged" id="NZu-2d-kUL"/>
+                                    <action selector="scalingTurnedOn:" destination="2" eventType="valueChanged" id="CIK-4F-8y0"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Debug" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbl-f0-HuX">
@@ -47,7 +50,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="whorehouseButtonPressed:" destination="2" eventType="touchUpInside" id="cC4-7N-ToX"/>
+                                    <action selector="startAugmentedReality:" destination="2" eventType="touchUpInside" id="Huk-dU-pZ5"/>
                                 </connections>
                             </button>
                         </subviews>
