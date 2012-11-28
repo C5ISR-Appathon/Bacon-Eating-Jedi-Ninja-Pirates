@@ -167,7 +167,9 @@
     tempCoordinate = [ARGeoCoordinate coordinateWithLocation:tempLocation locationTitle:@"Hawaii"];
     tempCoordinate.inclination = M_PI/30;
     [locationArray addObject:tempCoordinate];
-
+    
+    return locationArray;
+    
 }
 
 @end
