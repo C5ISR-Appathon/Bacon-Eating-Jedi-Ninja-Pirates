@@ -27,11 +27,10 @@
 @synthesize delegate;
 @synthesize lblDistance;
 
-- (id)initForCoordinate:(ARGeoCoordinate *)coordinate withDelgate:(id<ARMarkerDelegate>) aDelegate {
+- (id)initForCoordinate:(ARGeoCoordinate *)coordinate withDelgate:(id<ARMarkerDelegate>) aDelegate withCategory:(NSNumber *)category {
     
 	[self setCoordinateInfo:coordinate];
     [self setDelegate:aDelegate];
-    
 	CGRect theFrame = CGRectMake(0, 0, BOX_WIDTH, BOX_HEIGHT);
 	
 	if ((self = [super initWithFrame:theFrame])) {
@@ -49,7 +48,6 @@
 		[titleLabel setTextAlignment:	NSTextAlignmentCenter];
 		[titleLabel setText:			[coordinate title]];
 		[titleLabel sizeToFit];
-
         
 		[titleLabel setFrame: CGRectMake(BOX_WIDTH / 2.0 - [titleLabel bounds].size.width / 2.0 - 4.0, 0, 
                                          [titleLabel bounds].size.width + 8.0, [titleLabel bounds].size.height + 8.0)];
@@ -68,10 +66,24 @@
                                       [titleLabel bounds].size.width + 8.0, 
                                       [distLbl bounds].size.height + 8.0)];
         
-        
-		
-		UIImageView *pointView	= [[UIImageView alloc] initWithFrame:CGRectZero];
-		[pointView setImage:[UIImage imageNamed:@"zombie.png"]];
+        UIImageView *pointView	= [[UIImageView alloc] initWithFrame:CGRectZero];
+        switch ([category intValue]) {
+            case 0:
+                [pointView setImage:[UIImage imageNamed:@"food.png"]];
+                break;
+            case 1:
+                [pointView setImage:[UIImage imageNamed:@"gun icon.png"]];
+                break;
+            case 2:
+                [pointView setImage:[UIImage imageNamed:@"oil icon.png"]];
+                break;
+            case 3:
+                [pointView setImage:[UIImage imageNamed:@"zombie.png"]];
+                break;
+                
+            default:
+                break;
+        }
         
 		[pointView setFrame:	CGRectMake((int)(titleLabel.frame.origin.x - [pointView image].size.width),
                                            (int)(titleLabel.frame.origin.y + [pointView image].size.height / 2.0),
@@ -87,6 +99,7 @@
 
 		[self addSubview:pointView];
 		[self setBackgroundColor:[UIColor colorWithWhite:0 alpha:BOX_ALPHA]];
+        self.frame = CGRectMake(0, 0, titleLabel.frame.size.width, titleLabel.frame.size.height);
         
 		[titleLabel release];
         [distLbl release];

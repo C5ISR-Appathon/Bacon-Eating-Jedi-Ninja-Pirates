@@ -53,7 +53,7 @@
 	
 	if ([[locations returnLocations] count] > 0) {
 		for (ARGeoCoordinate *coordinate in [locations returnLocations]) {
-			MarkerView *cv = [[MarkerView alloc] initForCoordinate:coordinate withDelgate:self] ;
+			MarkerView *cv = [[MarkerView alloc] initForCoordinate:coordinate withDelgate:self withCategory:coordinate.category] ;
             [coordinate setDisplayView:cv];
             
 			[arc addCoordinate:coordinate];

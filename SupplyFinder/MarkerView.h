@@ -16,7 +16,7 @@
     id<ARMarkerDelegate> delegate;
 }
 
-- (id)initForCoordinate:(ARGeoCoordinate *)coordinate withDelgate:(id<ARMarkerDelegate>) aDelegate;
+- (id)initForCoordinate:(ARGeoCoordinate *)coordinate withDelgate:(id<ARMarkerDelegate>) aDelegate withCategory:(NSNumber *)category;
 
 @property (nonatomic,retain) ARGeoCoordinate *coordinateInfo;
 @property (nonatomic, assign) id<ARMarkerDelegate> delegate;

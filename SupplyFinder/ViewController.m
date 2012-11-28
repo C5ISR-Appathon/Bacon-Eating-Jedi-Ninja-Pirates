@@ -212,7 +212,7 @@
     
     for(Pin *pin in self.pins) {
         tempLocation = [[CLLocation alloc] initWithLatitude:pin.coordinate.latitude longitude:pin.coordinate.longitude];
-        tempCoordinate = [ARGeoCoordinate coordinateWithLocation:tempLocation locationTitle:pin.title];
+        tempCoordinate = [ARGeoCoordinate coordinateWithLocation:tempLocation locationTitle:pin.title ofCategory:pin.category];
         [locationArray addObject:tempCoordinate];
         
     }

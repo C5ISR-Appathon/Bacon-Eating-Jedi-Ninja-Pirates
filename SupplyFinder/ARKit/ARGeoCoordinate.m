@@ -12,6 +12,7 @@
 @synthesize distanceFromOrigin;
 @synthesize geoLocation;
 @synthesize displayView;
+@synthesize category;
 
 - (float)angleFromCoordinate:(CLLocationCoordinate2D)first toCoordinate:(CLLocationCoordinate2D)second {
 	
@@ -48,18 +49,19 @@
 	NSLog(@"distance from %@ is %f, angle is %f, azimuth is %f",[self title], [self distanceFromOrigin],angle,[self azimuth]);
 }
 
-+ (ARGeoCoordinate *)coordinateWithLocation:(CLLocation *)location locationTitle:(NSString *) titleOfLocation {
++ (ARGeoCoordinate *)coordinateWithLocation:(CLLocation *)location locationTitle:(NSString *) titleOfLocation ofCategory:(NSNumber *)category {
 
 	ARGeoCoordinate *newCoordinate	= [[ARGeoCoordinate alloc] init];
 	[newCoordinate setGeoLocation: location];
 	[newCoordinate setTitle: titleOfLocation];
+    [newCoordinate setCategory:category];
 	
 	return newCoordinate;
 }
 
-+ (ARGeoCoordinate *)coordinateWithLocation:(CLLocation *)location fromOrigin:(CLLocation *)origin {
++ (ARGeoCoordinate *)coordinateWithLocation:(CLLocation *)location fromOrigin:(CLLocation *)origin ofCategory:(NSNumber *)category {
 	
-	ARGeoCoordinate *newCoordinate = [ARGeoCoordinate coordinateWithLocation:location locationTitle:@""];
+	ARGeoCoordinate *newCoordinate = [ARGeoCoordinate coordinateWithLocation:location locationTitle:@"" ofCategory:category];
 	[newCoordinate calibrateUsingOrigin:origin];
 	return newCoordinate;
 }
