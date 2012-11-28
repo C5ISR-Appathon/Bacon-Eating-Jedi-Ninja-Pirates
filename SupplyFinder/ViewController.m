@@ -51,7 +51,7 @@
     {
         // Deal with error...
     }else{
-        _pins = [[NSMutableArray alloc] initWithArray:array copyItems:YES];;
+        _pins = [[NSMutableArray alloc] initWithArray:array];;
         
     }
     
