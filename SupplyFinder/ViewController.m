@@ -394,7 +394,7 @@
         {
             CLPlacemark *topResult = [placemarks objectAtIndex:0];
             Pin *pin = (Pin *)annotationView.annotation;
-            pin.title = [NSString stringWithFormat:@"%@, %@", topResult.locality, topResult.administrativeArea]; //city,state
+            //pin.title = [NSString stringWithFormat:@"%@, %@", topResult.locality, topResult.administrativeArea]; //city,state
             
         }
     }];
