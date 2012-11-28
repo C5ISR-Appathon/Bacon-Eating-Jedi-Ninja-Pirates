@@ -27,6 +27,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    _appDelegate = [[UIApplication sharedApplication] delegate];
+    _managedObjectContext = [_appDelegate managedObjectContext];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,8 +43,11 @@
     
     NSInteger selectedIndex = [_categorySegment selectedSegmentIndex];
     
+    [_selectedPin setCategory:[NSNumber numberWithInteger:selectedIndex]];
+    
     if(selectedIndex == 0){
         //food
+        
         
     }else if(selectedIndex == 1){
         //weapons
@@ -55,6 +61,12 @@
     }
 }
 
+- (IBAction)donePressed:(id)sender {
+    
+    [_managedObjectContext save:nil];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 @end

@@ -15,6 +15,8 @@
 
 @interface ViewController ()
 
+@property (strong, nonatomic) Pin *addedPin;
+
 @end
 
 @implementation ViewController
@@ -83,14 +85,22 @@
     }
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if( [[segue identifier] isEqualToString:@"addPin"] ){
+        [(PinCreateEditViewController *)[segue destinationViewController] setSelectedPin:_addedPin];
+    }
+}
 
 - (IBAction)addPointButtonClicked {
     
-    [self addMarkerForAddress:@"Charleston, SC"];
     
+    _addedPin = [self addMarkerForAddress:@"Charleston, SC"];
+    
+    [self performSegueWithIdentifier:@"addPin" sender:self];
 }
 
--(void)addMarkerForAddress:(NSString *)address
+-(Pin *)addMarkerForAddress:(NSString *)address
 {
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     [geocoder geocodeAddressString:address completionHandler:^(NSArray* placemarks, NSError* error){

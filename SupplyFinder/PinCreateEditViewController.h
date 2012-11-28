@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Pin.h"
+#import "AppDelegate.h"
+
 
 @interface PinCreateEditViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UISegmentedControl *categorySegment;
+@property (strong, nonatomic) Pin *selectedPin;
+
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) AppDelegate *appDelegate;
 
 @end

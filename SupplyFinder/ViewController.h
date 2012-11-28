@@ -13,7 +13,7 @@
 #import "AppDelegate.h"
 #import "ARLocationDelegate.h"
 #import "ARViewController.h"
-
+#import "PinCreateEditViewController.h"
 
 @interface ViewController : UIViewController <ARLocationDelegate, MKMapViewDelegate, NSFetchedResultsControllerDelegate>
 
