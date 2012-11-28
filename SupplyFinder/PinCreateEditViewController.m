@@ -80,7 +80,11 @@
         _pin.title = @"N/A";
     }
     
-    _pin.coordinate = [[[[(ViewController *)_delegate mapView] userLocation] location] coordinate];
+    //CLLocationCoordinate2D userLocation = [[[[(ViewController *)_delegate mapView] userLocation] location] coordinate];
+    
+    MKMapView *mapView = [(ViewController *)_delegate mapView];
+    
+    _pin.coordinate = mapView.centerCoordinate;
 
     
 }
