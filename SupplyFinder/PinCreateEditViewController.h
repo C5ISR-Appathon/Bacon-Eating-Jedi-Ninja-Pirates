@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Pin.h"
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @protocol PinCreateEditDelegate <NSObject>
 

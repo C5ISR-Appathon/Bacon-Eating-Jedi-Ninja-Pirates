@@ -111,6 +111,7 @@
     //Add the marker
     [self.mapView addAnnotation:thePin];
     
+    
     if (!_pins) {
         _pins = [NSMutableArray arrayWithCapacity:5];
     }

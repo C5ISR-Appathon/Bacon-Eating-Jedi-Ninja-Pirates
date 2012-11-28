@@ -83,7 +83,9 @@
             }else{
                 _pin.title = [NSString stringWithFormat:@"%@, %@", topResult.locality, topResult.administrativeArea]; //city,state
             }
-            _pin.coordinate = topResult.location.coordinate;
+            _pin.coordinate = [[[[(ViewController *)_delegate mapView] userLocation] location] coordinate];
+            
+            //_pin.coordinate = topResult.location.coordinate;
             
             
         }
