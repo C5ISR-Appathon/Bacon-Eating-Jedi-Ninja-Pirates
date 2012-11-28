@@ -64,6 +64,9 @@
     }else if(selectedIndex == 3){
         //zombies
         [_categoryImage setImage:[UIImage imageNamed:@"zombie.png"]];
+    }else if(selectedIndex == 4){
+        //zombies
+        [_categoryImage setImage:[UIImage imageNamed:@"companionship.png"]];
     }
 }
 
@@ -77,7 +80,11 @@
         _pin.title = @"N/A";
     }
     
-    _pin.coordinate = [[[[(ViewController *)_delegate mapView] userLocation] location] coordinate];
+    //CLLocationCoordinate2D userLocation = [[[[(ViewController *)_delegate mapView] userLocation] location] coordinate];
+    
+    MKMapView *mapView = [(ViewController *)_delegate mapView];
+    
+    _pin.coordinate = mapView.centerCoordinate;
 
     
 }

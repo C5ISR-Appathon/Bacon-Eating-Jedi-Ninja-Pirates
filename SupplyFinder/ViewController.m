@@ -119,6 +119,7 @@
         //[(PinCreateEditViewController *)[segue destinationViewController] setSelectedPin:_addedPin];
         
         [[segue destinationViewController] setDelegate:self];
+        [(EditDeleteViewController *)[segue destinationViewController] setPin:_selectedPin];
         
     }
 }
@@ -308,6 +309,10 @@
             
             customPinView.image = [UIImage imageNamed:@"zombie.png"];
             
+        }else if( [[(Pin *)annotation category] intValue] == 4 ){
+            
+            customPinView.image = [UIImage imageNamed:@"companionship.png"];
+            
         }
         
         
@@ -331,19 +336,19 @@
     return nil;
 }
 
-//-(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
-//{
-//    _selectedPin = (Pin *)[view annotation];
-//}
-//
-//-(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
-//{
-//    _selectedPin = nil;
-//}
+-(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+{
+    _selectedPin = (Pin *)[view annotation];
+}
+
+-(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
+{
+    _selectedPin = nil;
+}
 
 -(void)editPin:(Pin *)pin
 {
-    //[self performSegueWithIdentifier:@"addPin" sender:self];
+    [self performSegueWithIdentifier:@"edit" sender:self];
 }
 
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
@@ -390,7 +395,7 @@
         {
             CLPlacemark *topResult = [placemarks objectAtIndex:0];
             Pin *pin = (Pin *)annotationView.annotation;
-            pin.title = [NSString stringWithFormat:@"%@, %@", topResult.locality, topResult.administrativeArea]; //city,state
+            //pin.title = [NSString stringWithFormat:@"%@, %@", topResult.locality, topResult.administrativeArea]; //city,state
             
         }
     }];

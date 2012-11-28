@@ -40,16 +40,40 @@
 	[arc setRotateViewsBasedOnPerspective:YES];
     [arc updateDebugMode:![arc debugMode]];
     
+    
+    //add Nightvision view
+    
+    _nightVisionView = [[UIView alloc] initWithFrame:self.view.frame];
+    _nightVisionView.backgroundColor = [UIColor clearColor];
+    [[self view] addSubview:_nightVisionView];
+    
+    [_nightVisionView release];
+    
+    
+    
+    
+    
+    
     UIButton *closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, 60, 30)];
-    
     [closeBtn setTitle:@"Close" forState:UIControlStateNormal];
-    
-    [closeBtn setBackgroundColor:[UIColor greenColor]];
+    [closeBtn setBackgroundColor:[UIColor redColor]];
     [closeBtn addTarget:self action:@selector(closeButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [[self view] addSubview:closeBtn];
-    
     [closeBtn release];
-	
+    
+    
+    UIButton *nvBtn = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width-120), 20, 120, 30)];
+    [nvBtn setTitle:@"NV Mode" forState:UIControlStateNormal];
+    [nvBtn setBackgroundColor:[UIColor greenColor]];
+    [nvBtn addTarget:self action:@selector(enableNightVision:) forControlEvents:UIControlEventTouchUpInside];
+    [[self view] addSubview:nvBtn];
+    
+    nvEnabled = NO;
+    
+    [nvBtn release];
+    
+    
+    
 	GEOLocations* locations = [[GEOLocations alloc] initWithDelegate:delegate];
 	
 	if ([[locations returnLocations] count] > 0) {
@@ -132,6 +156,24 @@
 
 - (void)dealloc {
     [super dealloc];
+}
+
+
+-(IBAction) enableNightVision:(UIButton*)sender {
+    
+    if (!nvEnabled) {
+        sender.backgroundColor = [UIColor blueColor];
+        _nightVisionView.backgroundColor = [UIColor colorWithRed:0 green:255 blue:0 alpha:0.30];
+        nvEnabled = YES;
+    } else {
+        sender.backgroundColor = [UIColor greenColor];
+        _nightVisionView.backgroundColor = [UIColor clearColor];
+        nvEnabled = NO;
+        
+    }
+
+    
+
 }
 
 
