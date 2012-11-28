@@ -65,7 +65,7 @@
         
 		
 		UIImageView *pointView	= [[UIImageView alloc] initWithFrame:CGRectZero];
-		[pointView setImage:[UIImage imageNamed:@"location.png"]];
+		[pointView setImage:[UIImage imageNamed:@"zombie.png"]];
         
 		[pointView setFrame:	CGRectMake((int)(BOX_WIDTH / 2.0 - [pointView image].size.width / 2.0), 
                                            (int)(BOX_HEIGHT / 2.0 - [pointView image].size.height / 2.0), 

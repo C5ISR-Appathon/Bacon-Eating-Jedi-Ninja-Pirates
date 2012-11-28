@@ -174,19 +174,25 @@
         [errorLabel setTextAlignment:NSTextAlignmentCenter];
         [[infovc view] addSubview:errorLabel];
         
-        UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 90, 30)];
+        UIButton *closeButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, 90, 30)];
         [closeButton setTitle:@"Close" forState:UIControlStateNormal];
         
         [closeButton setBackgroundColor:[UIColor blueColor]];
         [closeButton addTarget:self action:@selector(closeButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         [[infovc view] addSubview:closeButton];
         
-        UIButton *closeARButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 50, 120, 30)];
+        UIButton *closeARButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 70, 120, 30)];
         [closeARButton setTitle:@"Close AR View" forState:UIControlStateNormal];
         
         [closeARButton setBackgroundColor:[UIColor blackColor]];
         [closeARButton addTarget:self action:@selector(closeARButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         [[infovc view] addSubview:closeARButton];
+        
+        UIImageView *testImage	= [[UIImageView alloc] initWithFrame:CGRectZero];
+		[testImage setImage:[UIImage imageNamed:@"zombie.png"]];
+        
+		[testImage setFrame:CGRectMake(50, 70, 120, 30)];
+        
         
         [[appDelegate window] addSubview:[infovc view]];
         
@@ -206,55 +212,11 @@
         [locationArray addObject:tempCoordinate];
         
     }
-//    
-//    tempLocation = [[CLLocation alloc] initWithLatitude:39.550051 longitude:-105.782067];
-//    tempCoordinate = [ARGeoCoordinate coordinateWithLocation:tempLocation locationTitle:@"Denver"];
-//    [locationArray addObject:tempCoordinate];
-//    
-//    tempLocation = [[CLLocation alloc] initWithLatitude:45.523875 longitude:-122.670399];
-//    tempCoordinate = [ARGeoCoordinate coordinateWithLocation:tempLocation locationTitle:@"Portland"];
-//    [locationArray addObject:tempCoordinate];
-//    
-//    tempLocation = [[CLLocation alloc] initWithLatitude:41.879535 longitude:-87.624333];
-//    tempCoordinate = [ARGeoCoordinate coordinateWithLocation:tempLocation locationTitle:@"Chicago"];
-//    [locationArray addObject:tempCoordinate];
-//    
-//    tempLocation = [[CLLocation alloc] initWithLatitude:30.268735 longitude:-97.745209];
-//    tempCoordinate = [ARGeoCoordinate coordinateWithLocation:tempLocation locationTitle:@"Austin"];
-//    [locationArray addObject:tempCoordinate];
-//
-//    tempLocation = [[CLLocation alloc] initWithLatitude:51.500152 longitude:-0.126236];
-//    tempCoordinate = [ARGeoCoordinate coordinateWithLocation:tempLocation locationTitle:@"London"];
-//    [locationArray addObject:tempCoordinate];
-//    
-//    tempLocation = [[CLLocation alloc] initWithLatitude:48.856667 longitude:2.350987];
-//    tempCoordinate = [ARGeoCoordinate coordinateWithLocation:tempLocation locationTitle:@"Paris"];
-//    [locationArray addObject:tempCoordinate];
-//    
-//    tempLocation = [[CLLocation alloc] initWithLatitude:55.676294 longitude:12.568116];
-//    tempCoordinate = [ARGeoCoordinate coordinateWithLocation:tempLocation locationTitle:@"Copenhagen"];
-//    [locationArray addObject:tempCoordinate];
-//
-//    tempLocation = [[CLLocation alloc] initWithLatitude:52.373801 longitude:4.890935];
-//    tempCoordinate = [ARGeoCoordinate coordinateWithLocation:tempLocation locationTitle:@"Amsterdam"];
-//    [locationArray addObject:tempCoordinate];
-//
-//    tempLocation = [[CLLocation alloc] initWithLatitude:19.611544 longitude:-155.665283];
-//    tempCoordinate = [ARGeoCoordinate coordinateWithLocation:tempLocation locationTitle:@"Hawaii"];
-//    tempCoordinate.inclination = M_PI/30;
-//    [locationArray addObject:tempCoordinate];
+
     
     return locationArray;
     
 }
-
-
-
-
-
-
-
-
 
 #pragma mark - MKMapViewDelegate
 
