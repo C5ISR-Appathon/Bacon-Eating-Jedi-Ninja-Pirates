@@ -160,7 +160,7 @@
     [captureSession stopRunning];
     AVCaptureInput* input = [captureSession.inputs objectAtIndex:0];
     [captureSession removeInput:input];
-    //[[self previewLayer] removeFromSuperlayer];
+    [[self previewLayer] removeFromSuperlayer];
     [self setCaptureSession:nil];
     [self setPreviewLayer:nil];	
 }
@@ -519,8 +519,8 @@
         }
 		
         [[self cameraView] setFrame:bounds];
-        [[self previewLayer] setVideoOrientation:cameraOrientation];
-        //[[self previewLayer] setFrame:bounds];
+        [[self previewLayer] setOrientation:cameraOrientation];
+        [[self previewLayer] setFrame:bounds];
   
         [displayView setTransform:CGAffineTransformIdentity];
 		[displayView setTransform: transform];

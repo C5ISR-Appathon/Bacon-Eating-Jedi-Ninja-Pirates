@@ -13,68 +13,26 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QDe-3C-LH9">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="212" id="cgG-iu-ORB"/>
-                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="2" id="emi-ze-cdl"/>
                                 </connections>
                             </mapView>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AL8-uO-fCs">
-                                <connections>
-                                    <action selector="debugSwitchChanged:" destination="2" eventType="valueChanged" id="23Q-Kw-J1H"/>
-                                </connections>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6mg-9y-mfP">
-                                <connections>
-                                    <action selector="scalingTurnedOn:" destination="2" eventType="valueChanged" id="CIK-4F-8y0"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Debug" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbl-f0-HuX">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Scaling" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mki-7S-Zyy">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocd-kR-11c">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Geo Location Info">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="startAugmentedReality:" destination="2" eventType="touchUpInside" id="Huk-dU-pZ5"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="mki-7S-Zyy" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0V2-VH-YYE"/>
-                            <constraint firstItem="Pbl-f0-HuX" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="1Nx-G3-WrO"/>
-                            <constraint firstItem="Pbl-f0-HuX" firstAttribute="top" secondItem="AL8-uO-fCs" secondAttribute="top" type="default" id="7FD-By-jdg"/>
-                            <constraint firstAttribute="trailing" secondItem="AL8-uO-fCs" secondAttribute="trailing" constant="47" id="7r4-au-xW2"/>
-                            <constraint firstAttribute="bottom" secondItem="AL8-uO-fCs" secondAttribute="bottom" constant="63" id="BNO-Be-JOG"/>
-                            <constraint firstItem="6mg-9y-mfP" firstAttribute="leading" secondItem="AL8-uO-fCs" secondAttribute="leading" type="default" id="D4L-0j-gyt"/>
                             <constraint firstItem="QDe-3C-LH9" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="DuQ-O2-vNs"/>
                             <constraint firstItem="QDe-3C-LH9" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="OUx-3J-loZ"/>
-                            <constraint firstItem="ocd-kR-11c" firstAttribute="centerX" secondItem="QDe-3C-LH9" secondAttribute="centerX" type="default" id="Zdv-Rb-foq"/>
-                            <constraint firstAttribute="bottom" secondItem="6mg-9y-mfP" secondAttribute="bottom" constant="18" id="dXt-n5-x6W"/>
                             <constraint firstItem="QDe-3C-LH9" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="ddF-KK-9Xk"/>
-                            <constraint firstItem="ocd-kR-11c" firstAttribute="top" secondItem="QDe-3C-LH9" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="tPw-xs-hg6"/>
-                            <constraint firstAttribute="bottom" secondItem="mki-7S-Zyy" secondAttribute="bottom" constant="23" id="vVQ-hm-0VN"/>
+                            <constraint firstItem="QDe-3C-LH9" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="qdr-lF-ybn"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="Y0E-hg-fke"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="e0B-av-sdM">
+                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="ZQv-Vk-yvA">
+                            <connections>
+                                <action selector="startAugmentedReality:" destination="2" id="S5R-Af-gbO"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="tcQ-W7-VBH">
                             <connections>
                                 <action selector="addPointButtonClicked" destination="2" id="NRa-DN-9ok"/>
@@ -120,8 +78,6 @@
             <relationships>
                 <relationship kind="action" name="closeARButtonClicked:"/>
                 <relationship kind="action" name="closeButtonClicked:"/>
-                <relationship kind="action" name="debugSwitchChanged:"/>
-                <relationship kind="action" name="scalingTurnedOn:"/>
                 <relationship kind="action" name="startAugmentedReality:"/>
                 <relationship kind="outlet" name="debugSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>

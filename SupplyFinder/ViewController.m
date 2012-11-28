@@ -122,15 +122,15 @@
 
 
 
-- (IBAction)debugSwitchChanged:(id)sender
-{
-    [[ContentManager sharedContentManager] setDebugMode:[self.debugSwitch isOn]];
-}
-
-- (IBAction)scalingTurnedOn:(id)sender
-{
-    [[ContentManager sharedContentManager] setScaleOnDistance:[self.scalingSwitch isOn]];
-}
+//- (IBAction)debugSwitchChanged:(id)sender
+//{
+//    [[ContentManager sharedContentManager] setDebugMode:[self.debugSwitch isOn]];
+//}
+//
+//- (IBAction)scalingTurnedOn:(id)sender
+//{
+//    [[ContentManager sharedContentManager] setScaleOnDistance:[self.scalingSwitch isOn]];
+//}
 
 - (IBAction)startAugmentedReality:(id)sender
 {
