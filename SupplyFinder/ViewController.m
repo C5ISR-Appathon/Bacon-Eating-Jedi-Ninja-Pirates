@@ -56,9 +56,9 @@
     }
     
     [self.debugSwitch setOn:NO animated:YES];
-    [self.hookerSwitch setOn:YES animated:YES];
+    [self.scalingSwitch setOn:YES animated:YES];
     [[ContentManager sharedContentManager] setDebugMode:[self.debugSwitch isOn]];
-    [[ContentManager sharedContentManager] setScaleOnDistance:[self.hookerSwitch isOn]];
+    [[ContentManager sharedContentManager] setScaleOnDistance:[self.scalingSwitch isOn]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,12 +78,12 @@
     [[ContentManager sharedContentManager] setDebugMode:[self.debugSwitch isOn]];
 }
 
-- (IBAction)hookersTurnedOn:(id)sender
+- (IBAction)scalingTurnedOn:(id)sender
 {
-    [[ContentManager sharedContentManager] setScaleOnDistance:[self.hookerSwitch isOn]];
+    [[ContentManager sharedContentManager] setScaleOnDistance:[self.scalingSwitch isOn]];
 }
 
-- (IBAction)whorehouseButtonPressed:(id)sender
+- (IBAction)startAugmentedReality:(id)sender
 {
     if([ARKit deviceSupportsAR]) {
         self.cameraViewController = [[ARViewController alloc] initWithDelegate:self];
