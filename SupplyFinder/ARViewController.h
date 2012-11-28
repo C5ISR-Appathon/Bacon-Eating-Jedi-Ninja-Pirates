@@ -16,10 +16,12 @@
 @interface ARViewController : UIViewController<ARMarkerDelegate, ARDelegate> {
 	AugmentedRealityController	*agController;
 	id<ARLocationDelegate> delegate;
+    BOOL nvEnabled;
 }
 
 @property (nonatomic, retain) AugmentedRealityController *agController;
 @property (nonatomic, assign) id<ARLocationDelegate> delegate;
+@property (nonatomic, assign) UIView *nightVisionView;
 
 -(id)initWithDelegate:(id<ARLocationDelegate>) aDelegate;
 
