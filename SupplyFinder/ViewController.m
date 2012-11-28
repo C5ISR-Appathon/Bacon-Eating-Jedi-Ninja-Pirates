@@ -62,7 +62,28 @@
     [self.scalingSwitch setOn:YES animated:YES];
     [[ContentManager sharedContentManager] setDebugMode:[self.debugSwitch isOn]];
     [[ContentManager sharedContentManager] setScaleOnDistance:[self.scalingSwitch isOn]];
+    
+    self.title = @"Supply Finder";
+    
+    // show North America
+//    MKCoordinateRegion AmericaRegion;
+//    AmericaRegion.center.latitude = 37.37;
+//    AmericaRegion.center.longitude = -96.24;
+//    AmericaRegion.span.latitudeDelta = 33.49;
+//    AmericaRegion.span.longitudeDelta = 31.025;
+    
+    //show charleston region
+    MKCoordinateRegion CharlestonRegion;
+    CharlestonRegion.center.latitude = 32.79748428458082;
+    CharlestonRegion.center.longitude = -79.95392848041794;
+    CharlestonRegion.span.latitudeDelta = 0.3501998068058256;
+    CharlestonRegion.span.longitudeDelta = 0.3204708508681477;
 
+    
+    [self.mapView setRegion:CharlestonRegion animated:NO];
+    
+    
+    
     
 }
 
@@ -221,6 +242,17 @@
 }
 
 #pragma mark - MKMapViewDelegate
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
+    
+//    MKCoordinateRegion region = [mapView region];
+//    NSLog(@"Lat: %@", [NSNumber numberWithDouble:region.center.latitude]);
+//    NSLog(@"Long: %@", [NSNumber numberWithDouble:region.center.longitude]);
+//    NSLog(@"LatDelta: %@", [NSNumber numberWithDouble:region.span.latitudeDelta]);
+//    NSLog(@"LongDelta: %@", [NSNumber numberWithDouble:region.span.longitudeDelta]);
+    
+    
+}
 
 
 - (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id <MKAnnotation>)annotation
