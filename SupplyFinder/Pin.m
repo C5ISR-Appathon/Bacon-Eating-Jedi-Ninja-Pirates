@@ -16,4 +16,16 @@
 @dynamic title;
 @dynamic category;
 
+
+- (CLLocationCoordinate2D)coordinate {
+    CLLocationCoordinate2D cor = CLLocationCoordinate2DMake([self.latitude doubleValue],[self.longitude doubleValue]);
+    return cor;
+}
+
+- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate {
+    self.latitude =[NSNumber numberWithDouble:newCoordinate.latitude];
+    self.longitude = [NSNumber numberWithDouble:newCoordinate.longitude];
+}
+
+
 @end
