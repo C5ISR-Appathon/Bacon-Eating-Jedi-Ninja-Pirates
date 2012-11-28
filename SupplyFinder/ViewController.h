@@ -18,7 +18,11 @@
 @property (strong, nonatomic) ARViewController *cameraViewController;
 @property (strong, nonatomic) UIViewController *infoViewController;
 
-@property (nonatomic, weak) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+
+@property (strong, nonatomic) NSArray *pins;
 
 @property (weak, nonatomic) IBOutlet UISwitch *debugSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *hookerSwitch;
