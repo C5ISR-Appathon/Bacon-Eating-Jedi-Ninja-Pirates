@@ -16,6 +16,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="212" id="cgG-iu-ORB"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="emi-ze-cdl"/>
+                                </connections>
                             </mapView>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AL8-uO-fCs">
                                 <connections>
