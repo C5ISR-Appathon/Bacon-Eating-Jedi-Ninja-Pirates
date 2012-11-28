@@ -36,6 +36,7 @@
 		985E2C9916667FFE00E9BB8B /* PinCreateEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 985E2C9816667FFE00E9BB8B /* PinCreateEditViewController.m */; };
 		985E2C9C166680FF00E9BB8B /* placeholder.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 985E2C9B166680FF00E9BB8B /* placeholder.jpeg */; };
 		985E2CA01666853600E9BB8B /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 985E2C9F1666853600E9BB8B /* Pin.m */; };
+		985E2CB31666C55600E9BB8B /* EditDeleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 985E2CB21666C55600E9BB8B /* EditDeleteViewController.m */; };
 		C109B6C31666571700D2A140 /* ARCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = C109B6B81666571700D2A140 /* ARCoordinate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C109B6C41666571700D2A140 /* ARGeoCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = C109B6BA1666571700D2A140 /* ARGeoCoordinate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C109B6C51666571700D2A140 /* ARKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C109B6BC1666571700D2A140 /* ARKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -88,6 +89,8 @@
 		985E2C9B166680FF00E9BB8B /* placeholder.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpeg; sourceTree = "<group>"; };
 		985E2C9E1666853500E9BB8B /* Pin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pin.h; sourceTree = "<group>"; };
 		985E2C9F1666853600E9BB8B /* Pin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pin.m; sourceTree = "<group>"; };
+		985E2CB11666C55600E9BB8B /* EditDeleteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDeleteViewController.h; sourceTree = "<group>"; };
+		985E2CB21666C55600E9BB8B /* EditDeleteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditDeleteViewController.m; sourceTree = "<group>"; };
 		C109B6B71666571700D2A140 /* ARCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCoordinate.h; sourceTree = "<group>"; };
 		C109B6B81666571700D2A140 /* ARCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARCoordinate.m; sourceTree = "<group>"; };
 		C109B6B91666571700D2A140 /* ARGeoCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARGeoCoordinate.h; sourceTree = "<group>"; };
@@ -184,6 +187,8 @@
 				985E2C9816667FFE00E9BB8B /* PinCreateEditViewController.m */,
 				24A6847B1666A0D1006C3E7D /* CustomAnnotationView.h */,
 				24A6847C1666A0D1006C3E7D /* CustomAnnotationView.m */,
+				985E2CB11666C55600E9BB8B /* EditDeleteViewController.h */,
+				985E2CB21666C55600E9BB8B /* EditDeleteViewController.m */,
 			);
 			path = SupplyFinder;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 				985E2C9916667FFE00E9BB8B /* PinCreateEditViewController.m in Sources */,
 				985E2CA01666853600E9BB8B /* Pin.m in Sources */,
 				24A6847D1666A0D1006C3E7D /* CustomAnnotationView.m in Sources */,
+				985E2CB31666C55600E9BB8B /* EditDeleteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
