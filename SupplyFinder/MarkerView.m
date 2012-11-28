@@ -40,7 +40,7 @@
 		
 		[titleLabel setBackgroundColor: [UIColor colorWithWhite:.3 alpha:BOX_ALPHA]];
 		[titleLabel setTextColor:		[UIColor whiteColor]];
-		[titleLabel setTextAlignment:	UITextAlignmentCenter];
+		[titleLabel setTextAlignment:	NSTextAlignmentCenter];
 		[titleLabel setText:			[coordinate title]];
 		[titleLabel sizeToFit];
 
@@ -52,8 +52,8 @@
 		
 		[distLbl setBackgroundColor: [UIColor colorWithWhite:.3 alpha:BOX_ALPHA]];
 		[distLbl setTextColor:		[UIColor whiteColor]];
-		[distLbl setTextAlignment:	UITextAlignmentCenter];
-		[distLbl setText:			[NSString stringWithFormat:@"%d", [coordinate distanceFromOrigin]]];
+		[distLbl setTextAlignment:	NSTextAlignmentCenter];
+		[distLbl setText:			[NSString stringWithFormat:@"%g", [coordinate distanceFromOrigin]]];
 		[distLbl sizeToFit];
         
         
