@@ -18,11 +18,13 @@
 	AugmentedRealityController	*agController;
 	id<ARLocationDelegate> delegate;
     BOOL nvEnabled;
+    AVAudioPlayer *audioPlayer;
 }
 
 @property (nonatomic, retain) AugmentedRealityController *agController;
 @property (nonatomic, assign) id<ARLocationDelegate> delegate;
 @property (nonatomic, assign) UIView *nightVisionView;
+@property (nonatomic, retain) AVAudioPlayer *audioPlayer;
 
 -(id)initWithDelegate:(id<ARLocationDelegate>) aDelegate;
 

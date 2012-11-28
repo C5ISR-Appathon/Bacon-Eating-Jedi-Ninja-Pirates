@@ -50,8 +50,23 @@
     [_nightVisionView release];
     
     
+    //  Nightvision sound
+    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Splinter_Cell-Night_Vision"
+                                                                        ofType:@"m4a"]];
     
+    AVAudioPlayer *preAudioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [[AVAudioSession sharedInstance] setActive:YES error:nil];
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [preAudioPlayer prepareToPlay];
     
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //  Preloading sound
+        [preAudioPlayer play];
+        [preAudioPlayer stop];
+        self.audioPlayer = preAudioPlayer;
+    });
+
     
     
     UIButton *closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, 60, 30)];
@@ -86,15 +101,7 @@
 		}
 	}
     
-    //  Nightvision sound
-    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Splinter_Cell-Night_Vision"
-                                                                        ofType:@"mp3"]];
-    
-    AVAudioPlayer *audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
-    [[AVAudioSession sharedInstance] setActive:YES error:nil];
-    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
-    [audioPlayer play];
+
     
     [self setAgController:arc];
     [arc release];
@@ -162,6 +169,10 @@
 -(IBAction) enableNightVision:(UIButton*)sender {
     
     if (!nvEnabled) {
+        
+
+        [self.audioPlayer play];
+        
         sender.backgroundColor = [UIColor blueColor];
         _nightVisionView.backgroundColor = [UIColor colorWithRed:0 green:255 blue:0 alpha:0.30];
         nvEnabled = YES;
