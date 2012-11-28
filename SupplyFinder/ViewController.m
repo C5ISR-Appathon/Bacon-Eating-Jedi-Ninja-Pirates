@@ -82,9 +82,6 @@
     
     [self.mapView setRegion:CharlestonRegion animated:NO];
     
-    
-    
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -117,6 +114,12 @@
         //[(PinCreateEditViewController *)[segue destinationViewController] setSelectedPin:_addedPin];
         
         [[segue destinationViewController] setDelegate:self];
+
+    }else if( [[segue identifier] isEqualToString:@"edit"] ){
+        //[(PinCreateEditViewController *)[segue destinationViewController] setSelectedPin:_addedPin];
+        
+        [[segue destinationViewController] setDelegate:self];
+        
     }
 }
 
@@ -280,6 +283,13 @@
         
         customPinView.delegate = self;
         
+        
+        UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        [rightButton addTarget:self action:@selector(editPin:) forControlEvents:UIControlEventTouchUpInside];
+        [rightButton setTitle:annotation.title forState:UIControlStateNormal];
+        customPinView.rightCalloutAccessoryView = rightButton;
+        
+        
         if( [[(Pin *)annotation category] intValue] == 0 ){
             
             customPinView.image = [UIImage imageNamed:@"food.png"];
@@ -319,6 +329,20 @@
     return nil;
 }
 
+//-(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+//{
+//    _selectedPin = (Pin *)[view annotation];
+//}
+//
+//-(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
+//{
+//    _selectedPin = nil;
+//}
+
+-(void)editPin:(Pin *)pin
+{
+    //[self performSegueWithIdentifier:@"addPin" sender:self];
+}
 
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
     MKAnnotationView *aV;
