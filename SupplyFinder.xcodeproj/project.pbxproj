@@ -84,9 +84,6 @@
 		24F0345A1666513B008ABBCE = {
 			isa = PBXGroup;
 			children = (
-				C109B6CC1666576E00D2A140 /* QuartzCore.framework */,
-				C109B6CA1666576700D2A140 /* AVFoundation.framework */,
-				C109B6C81666575F00D2A140 /* CoreMedia.framework */,
 				24F0346F1666513B008ABBCE /* SupplyFinder */,
 				24F034681666513B008ABBCE /* Frameworks */,
 				24F034661666513B008ABBCE /* Products */,
@@ -104,6 +101,9 @@
 		24F034681666513B008ABBCE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C109B6C81666575F00D2A140 /* CoreMedia.framework */,
+				C109B6CA1666576700D2A140 /* AVFoundation.framework */,
+				C109B6CC1666576E00D2A140 /* QuartzCore.framework */,
 				248C600F166654F6002743D0 /* MapKit.framework */,
 				24F034691666513B008ABBCE /* UIKit.framework */,
 				24F0346B1666513B008ABBCE /* Foundation.framework */,
