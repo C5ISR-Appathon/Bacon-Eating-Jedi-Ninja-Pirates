@@ -30,6 +30,8 @@
     
     _appDelegate = [[UIApplication sharedApplication] delegate];
     _managedObjectContext = [_appDelegate managedObjectContext];
+    
+    _pin = [NSEntityDescription insertNewObjectForEntityForName:@"Pin" inManagedObjectContext:_managedObjectContext];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,11 +45,10 @@
     
     NSInteger selectedIndex = [_categorySegment selectedSegmentIndex];
     
-    [_selectedPin setCategory:[NSNumber numberWithInteger:selectedIndex]];
+    [_pin setCategory:[NSNumber numberWithInteger:selectedIndex]];
     
     if(selectedIndex == 0){
         //food
-        
         
     }else if(selectedIndex == 1){
         //weapons
@@ -61,11 +62,45 @@
     }
 }
 
+-(void)addMarkerForAddress:(NSString *)address
+{
+    
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:address completionHandler:^(NSArray* placemarks, NSError* error){
+        
+        // TODO: Handle multiple results. (Show all results or select closest result)
+        if (placemarks && placemarks.count > 0) {
+            CLPlacemark *topResult = [placemarks objectAtIndex:0];
+            
+            // Create a MLPlacemark
+            //MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:topResult];
+                        
+            _pin.title = [NSString stringWithFormat:@"%@, %@", topResult.locality, topResult.administrativeArea]; //city,state
+            _pin.coordinate = topResult.location.coordinate;
+            
+            
+        }
+        
+    }];
+    
+}
+
+
 - (IBAction)donePressed:(id)sender {
     
-    [_managedObjectContext save:nil];
+    [self addMarkerForAddress:@"Charleston, SC"];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    NSError *error = nil;
+    if (![_managedObjectContext save:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        [_delegate addMarker:_pin];
+    }];
 }
 
 
