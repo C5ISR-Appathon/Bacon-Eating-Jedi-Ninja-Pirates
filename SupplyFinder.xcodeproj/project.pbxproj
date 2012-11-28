@@ -15,7 +15,6 @@
 		24F0347A1666513B008ABBCE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F034791666513B008ABBCE /* AppDelegate.m */; };
 		24F0347C1666513B008ABBCE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F0347B1666513B008ABBCE /* Default.png */; };
 		24F0347E1666513B008ABBCE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F0347D1666513B008ABBCE /* Default@2x.png */; };
-		24F034801666513B008ABBCE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F0347F1666513B008ABBCE /* Default-568h@2x.png */; };
 		24F034831666513B008ABBCE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F034811666513B008ABBCE /* MainStoryboard.storyboard */; };
 		24F034861666513B008ABBCE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F034851666513B008ABBCE /* ViewController.m */; };
 /* End PBXBuildFile section */
@@ -161,7 +160,6 @@
 				24F034741666513B008ABBCE /* InfoPlist.strings in Resources */,
 				24F0347C1666513B008ABBCE /* Default.png in Resources */,
 				24F0347E1666513B008ABBCE /* Default@2x.png in Resources */,
-				24F034801666513B008ABBCE /* Default-568h@2x.png in Resources */,
 				24F034831666513B008ABBCE /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
