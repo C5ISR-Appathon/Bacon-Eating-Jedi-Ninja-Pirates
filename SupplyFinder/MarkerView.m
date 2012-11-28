@@ -16,7 +16,7 @@
 #define BOX_WIDTH 300
 #define BOX_HEIGHT 50
 #define BOX_GAP 10
-#define BOX_ALPHA 0.8
+#define BOX_ALPHA 0.5
 #define LABEL_HEIGHT 20.0
 
 
@@ -86,7 +86,7 @@
         [self setLblDistance:distLbl];
 
 		[self addSubview:pointView];
-		[self setBackgroundColor:[UIColor blackColor]];
+		[self setBackgroundColor:[UIColor colorWithWhite:0 alpha:BOX_ALPHA]];
         
 		[titleLabel release];
         [distLbl release];
