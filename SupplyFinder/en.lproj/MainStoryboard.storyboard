@@ -85,13 +85,16 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="uDa-Us-5jv"/>
                                     <barButtonItem title="DELETE" id="9sa-h6-SwP">
                                         <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="deletePressed:" destination="fKz-EQ-ih7" id="xle-La-DUn"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="29d-QM-JlD"/>
                                 </items>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDM-wP-DQ6">
                                 <items>
-                                    <barButtonItem title="Back" id="zID-Wg-l7h">
+                                    <barButtonItem style="done" systemItem="done" id="zID-Wg-l7h">
                                         <connections>
                                             <action selector="backPressed:" destination="fKz-EQ-ih7" id="qJp-2S-Fy5"/>
                                         </connections>
@@ -106,6 +109,9 @@
                                     <segment title="Zombies"/>
                                     <segment title="Companion"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="fKz-EQ-ih7" eventType="valueChanged" id="oif-dA-4ad"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -239,6 +245,43 @@
         <image name="binocular.png" width="30" height="30"/>
         <image name="placeholder.jpeg" width="400" height="300"/>
     </resources>
+    <classes>
+        <class className="EditDeleteViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditDeleteViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backPressed:"/>
+                <relationship kind="action" name="deletePressed:"/>
+                <relationship kind="action" name="segmentChanged:"/>
+                <relationship kind="outlet" name="catImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="categorySegment" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="titleField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PinCreateEditViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PinCreateEditViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="donePressed:"/>
+                <relationship kind="action" name="segmentChanged:"/>
+                <relationship kind="outlet" name="categoryImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="categorySegment" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="titleField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="closeARButtonClicked:"/>
+                <relationship kind="action" name="closeButtonClicked:"/>
+                <relationship kind="action" name="startAugmentedReality:"/>
+                <relationship kind="outlet" name="debugSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="scalingSwitch" candidateClass="UISwitch"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
