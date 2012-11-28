@@ -113,5 +113,14 @@
     }];
 }
 
+-(BOOL) textFieldShouldReturn: (UITextField *) textField
+{
+    [textField resignFirstResponder];
+    
+    
+    // You can access textField.text and do what you need to do with the text here
+    
+    return YES; // We'll let the textField handle the rest!
+}
 
 @end
