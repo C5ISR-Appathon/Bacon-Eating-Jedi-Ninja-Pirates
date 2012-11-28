@@ -10,6 +10,11 @@
 		248C6010166654F6002743D0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 248C600F166654F6002743D0 /* MapKit.framework */; };
 		248C6016166656D0002743D0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 248C6015166656D0002743D0 /* CoreLocation.framework */; };
 		248C601816665748002743D0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 248C601716665748002743D0 /* CoreData.framework */; };
+		24A6846716668A06006C3E7D /* companionship.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A6846216668A06006C3E7D /* companionship.png */; };
+		24A6846816668A06006C3E7D /* food.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A6846316668A06006C3E7D /* food.png */; };
+		24A6846916668A06006C3E7D /* gun icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A6846416668A06006C3E7D /* gun icon.png */; };
+		24A6846A16668A06006C3E7D /* oil icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A6846516668A06006C3E7D /* oil icon.png */; };
+		24A6846B16668A06006C3E7D /* zombie.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A6846616668A06006C3E7D /* zombie.png */; };
 		24F0346A1666513B008ABBCE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F034691666513B008ABBCE /* UIKit.framework */; };
 		24F0346C1666513B008ABBCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F0346B1666513B008ABBCE /* Foundation.framework */; };
 		24F0346E1666513B008ABBCE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F0346D1666513B008ABBCE /* CoreGraphics.framework */; };
@@ -41,6 +46,11 @@
 		248C600F166654F6002743D0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		248C6015166656D0002743D0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		248C601716665748002743D0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		24A6846216668A06006C3E7D /* companionship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = companionship.png; sourceTree = "<group>"; };
+		24A6846316668A06006C3E7D /* food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food.png; sourceTree = "<group>"; };
+		24A6846416668A06006C3E7D /* gun icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gun icon.png"; sourceTree = "<group>"; };
+		24A6846516668A06006C3E7D /* oil icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oil icon.png"; sourceTree = "<group>"; };
+		24A6846616668A06006C3E7D /* zombie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zombie.png; sourceTree = "<group>"; };
 		24F034651666513B008ABBCE /* SupplyFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SupplyFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F034691666513B008ABBCE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		24F0346B1666513B008ABBCE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -164,6 +174,11 @@
 		24F034701666513B008ABBCE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				24A6846216668A06006C3E7D /* companionship.png */,
+				24A6846316668A06006C3E7D /* food.png */,
+				24A6846416668A06006C3E7D /* gun icon.png */,
+				24A6846516668A06006C3E7D /* oil icon.png */,
+				24A6846616668A06006C3E7D /* zombie.png */,
 				24F034711666513B008ABBCE /* SupplyFinder-Info.plist */,
 				24F034721666513B008ABBCE /* InfoPlist.strings */,
 				24F034751666513B008ABBCE /* main.m */,
@@ -288,6 +303,11 @@
 				24F0347E1666513B008ABBCE /* Default@2x.png in Resources */,
 				24F034831666513B008ABBCE /* MainStoryboard.storyboard in Resources */,
 				985E2C9C166680FF00E9BB8B /* placeholder.jpeg in Resources */,
+				24A6846716668A06006C3E7D /* companionship.png in Resources */,
+				24A6846816668A06006C3E7D /* food.png in Resources */,
+				24A6846916668A06006C3E7D /* gun icon.png in Resources */,
+				24A6846A16668A06006C3E7D /* oil icon.png in Resources */,
+				24A6846B16668A06006C3E7D /* zombie.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
