@@ -12,6 +12,12 @@
 
 @interface EditDeleteViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *titleField;
+@property (strong, nonatomic) IBOutlet UISegmentedControl *categorySegment;
+@property (strong, nonatomic) IBOutlet UIImageView *catImage;
 
+@property (strong, nonatomic) Pin *pin;
+
+@property (strong, nonatomic) id delegate;
 
 @end

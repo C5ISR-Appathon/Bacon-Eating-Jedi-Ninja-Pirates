@@ -14,6 +14,7 @@
 #import "ARLocationDelegate.h"
 #import "ARViewController.h"
 #import "PinCreateEditViewController.h"
+#import "EditDeleteViewController.h"
 
 @interface ViewController : UIViewController <ARLocationDelegate, MKMapViewDelegate, NSFetchedResultsControllerDelegate>
 
@@ -29,6 +30,6 @@
 
 @property (strong, nonatomic) NSMutableArray *pins;
 
-//@property (strong, nonatomic) Pin *selectedPin;
+@property (strong, nonatomic) Pin *selectedPin;
 
 @end
