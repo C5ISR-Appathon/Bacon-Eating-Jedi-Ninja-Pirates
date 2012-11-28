@@ -39,7 +39,7 @@
 	[arc setRotateViewsBasedOnPerspective:YES];
     [arc updateDebugMode:![arc debugMode]];
     
-    UIButton *closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
+    UIButton *closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, 60, 30)];
     
     [closeBtn setTitle:@"Close" forState:UIControlStateNormal];
     
