@@ -255,4 +255,103 @@
     
 }
 
+
+
+
+
+
+
+
+
+#pragma mark - MKMapViewDelegate
+
+
+- (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    // if it's the user location, just return nil.
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    // handle our two custom annotations
+    //
+    if ([annotation isKindOfClass:[Pin class]])
+    {
+        // try to dequeue an existing pin view first
+        static NSString* PinAnnotationIdentifier = @"pinAnnotationIdentifier";
+        MKPinAnnotationView* pinView = (MKPinAnnotationView *)
+        //PinAnnotationView* pinView = (PinAnnotationView *)
+        [theMapView dequeueReusableAnnotationViewWithIdentifier:PinAnnotationIdentifier];
+        if (!pinView)
+        {
+            // if an existing pin view was not available, create one
+            MKPinAnnotationView* customPinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PinAnnotationIdentifier];
+            //PinAnnotationView* customPinView = [[PinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PinAnnotationIdentifier];
+            customPinView.pinColor = MKPinAnnotationColorRed;
+            customPinView.animatesDrop = YES;
+            customPinView.canShowCallout = YES;
+            customPinView.draggable = YES;
+            
+            // add a detail disclosure button to the callout which will open a new view controller page
+            //
+            // note: you can assign a specific call out accessory view, or as MKMapViewDelegate you can implement:
+            //  - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
+            //
+            
+            /*UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+             [rightButton addTarget:self
+             action:@selector(showDetails:)
+             forControlEvents:UIControlEventTouchUpInside];
+             customPinView.rightCalloutAccessoryView = rightButton;
+             */
+            
+            return customPinView;
+        }
+        else
+        {
+            pinView.annotation = annotation;
+        }
+        return pinView;
+    }
+    return nil;
+}
+
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)annotationView didChangeDragState:(MKAnnotationViewDragState)newState fromOldState:(MKAnnotationViewDragState)oldState {
+    if(newState == MKAnnotationViewDragStateEnding) {
+        //Pin dropped, update it's title with current location data
+        Pin *pin = (Pin *)annotationView.annotation;
+        CLLocation *location = [[CLLocation alloc] initWithLatitude:pin.coordinate.latitude longitude:pin.coordinate.longitude];
+        [self geocodeLocation:location forAnnotationView:annotationView];
+        
+    }
+}
+
+
+
+- (void)geocodeLocation:(CLLocation*)location forAnnotationView:(MKAnnotationView*)annotationView
+{
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    
+    [geocoder reverseGeocodeLocation:location completionHandler: ^(NSArray* placemarks, NSError* error){
+        
+        if ([placemarks count] > 0)
+        {
+            CLPlacemark *topResult = [placemarks objectAtIndex:0];
+            Pin *pin = (Pin *)annotationView.annotation;
+            pin.title = [NSString stringWithFormat:@"%@, %@", topResult.locality, topResult.administrativeArea]; //city,state
+            
+        }
+    }];
+}
+
+
+
+
+
+
+
+
+
+
+
 @end
