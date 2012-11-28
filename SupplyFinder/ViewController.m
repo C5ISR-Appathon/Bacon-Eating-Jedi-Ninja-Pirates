@@ -308,7 +308,7 @@
             
             customPinView.image = [UIImage imageNamed:@"zombie.png"];
             
-        }else if( [[(Pin *)annotation category] intValue] == 3 ){
+        }else if( [[(Pin *)annotation category] intValue] == 4 ){
             
             customPinView.image = [UIImage imageNamed:@"companionship.png"];
             
