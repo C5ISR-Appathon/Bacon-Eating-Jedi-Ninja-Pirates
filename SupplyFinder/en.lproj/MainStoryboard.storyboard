@@ -28,7 +28,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="e0B-av-sdM">
-                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="ZQv-Vk-yvA">
+                        <barButtonItem key="leftBarButtonItem" image="binocular.png" id="ZQv-Vk-yvA">
                             <connections>
                                 <action selector="startAugmentedReality:" destination="2" id="S5R-Af-gbO"/>
                             </connections>
@@ -179,6 +179,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="binocular.png" width="30" height="30"/>
         <image name="placeholder.jpeg" width="400" height="300"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
