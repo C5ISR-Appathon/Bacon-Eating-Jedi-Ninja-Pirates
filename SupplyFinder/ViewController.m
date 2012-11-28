@@ -233,57 +233,53 @@
     {
         // try to dequeue an existing pin view first
         static NSString* PinAnnotationIdentifier = @"pinAnnotationIdentifier";
-        MKPinAnnotationView* pinView = (MKPinAnnotationView *)
-        //PinAnnotationView* pinView = (PinAnnotationView *)
-        [theMapView dequeueReusableAnnotationViewWithIdentifier:PinAnnotationIdentifier];
         
-            // if an existing pin view was not available, create one
-            MKPinAnnotationView* customPinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PinAnnotationIdentifier];
-            //PinAnnotationView* customPinView = [[PinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PinAnnotationIdentifier];
-            customPinView.pinColor = MKPinAnnotationColorRed;
-            customPinView.animatesDrop = YES;
-            customPinView.canShowCallout = YES;
-            customPinView.draggable = YES;
         
-        NSLog([[(Pin *)annotation category]stringValue]);
+        // if an existing pin view was not available, create one
+        MKPinAnnotationView* customPinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PinAnnotationIdentifier];
+        //PinAnnotationView* customPinView = [[PinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PinAnnotationIdentifier];
+        customPinView.pinColor = MKPinAnnotationColorRed;
+        customPinView.animatesDrop = YES;
+        customPinView.canShowCallout = YES;
+        customPinView.draggable = YES;
         
-            if( [[(Pin *)annotation category] intValue] == 0 ){
-                
-                customPinView.image = [UIImage imageNamed:@"food.png"];
+        
+        
+        if( [[(Pin *)annotation category] intValue] == 0 ){
+            
+            customPinView.image = [UIImage imageNamed:@"food.png"];
 
-            }else if( [[(Pin *)annotation category] intValue] == 1 ){
-                
-                customPinView.image = [UIImage imageNamed:@"gun icon.png"];
-                
-            }else if( [[(Pin *)annotation category] intValue] == 2 ){
-                
-                customPinView.image = [UIImage imageNamed:@"oil icon.png"];
-                
-            }else if( [[(Pin *)annotation category] intValue] == 3 ){
-                
-                customPinView.image = [UIImage imageNamed:@"zombie.png"];
-                
-            }
+        }else if( [[(Pin *)annotation category] intValue] == 1 ){
             
+            customPinView.image = [UIImage imageNamed:@"gun icon.png"];
             
-            // add a detail disclosure button to the callout which will open a new view controller page
-            //
-            // note: you can assign a specific call out accessory view, or as MKMapViewDelegate you can implement:
-            //  - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
-            //
+        }else if( [[(Pin *)annotation category] intValue] == 2 ){
             
-            /*UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-             [rightButton addTarget:self
-             action:@selector(showDetails:)
-             forControlEvents:UIControlEventTouchUpInside];
-             customPinView.rightCalloutAccessoryView = rightButton;
-             */
+            customPinView.image = [UIImage imageNamed:@"oil icon.png"];
             
-            return customPinView;
+        }else if( [[(Pin *)annotation category] intValue] == 3 ){
+            
+            customPinView.image = [UIImage imageNamed:@"zombie.png"];
+            
+        }
         
-            //pinView.annotation = annotation;
-        //}
-        //return pinView;
+        
+        // add a detail disclosure button to the callout which will open a new view controller page
+        //
+        // note: you can assign a specific call out accessory view, or as MKMapViewDelegate you can implement:
+        //  - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
+        //
+        
+        /*UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+         [rightButton addTarget:self
+         action:@selector(showDetails:)
+         forControlEvents:UIControlEventTouchUpInside];
+         customPinView.rightCalloutAccessoryView = rightButton;
+         */
+        
+        return customPinView;
+        
+        
     }
     return nil;
 }
@@ -294,7 +290,7 @@
         //Pin dropped, update it's title with current location data
         Pin *pin = (Pin *)annotationView.annotation;
         CLLocation *location = [[CLLocation alloc] initWithLatitude:pin.coordinate.latitude longitude:pin.coordinate.longitude];
-        [self geocodeLocation:location forAnnotationView:annotationView];
+        //[self geocodeLocation:location forAnnotationView:annotationView];
         
     }
 }
