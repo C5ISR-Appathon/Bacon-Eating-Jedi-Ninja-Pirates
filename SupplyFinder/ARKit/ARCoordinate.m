@@ -24,7 +24,7 @@
 	[newCoordinate setAzimuth: newAzimuth];
 	[newCoordinate setTitle: @""];
 	
-	return [newCoordinate autorelease];
+	return newCoordinate;
 }
 
 - (NSUInteger)hash {
@@ -57,12 +57,7 @@
 	return equal;
 }
 
-- (void)dealloc {
-	
-	[self setTitle: nil];
-	[self setSubtitle: nil];
-	[super dealloc];
-}
+
 
 - (NSString *)description {
 	return [NSString stringWithFormat:@"%@ r: %.3fm φ: %.3f° θ: %.3f°", [self title], [self radialDistance], radiansToDegrees([self azimuth]), radiansToDegrees([self inclination])];
