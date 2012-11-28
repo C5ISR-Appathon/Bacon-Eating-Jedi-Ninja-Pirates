@@ -9,10 +9,18 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "ARLocationDelegate.h"
+#import "ARViewController.h"
 
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <ARLocationDelegate>
+
+@property (strong, nonatomic) ARViewController *cameraViewController;
+@property (strong, nonatomic) UIViewController *infoViewController;
 
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
+
+@property (weak, nonatomic) IBOutlet UISwitch *debugSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *hookerSwitch;
 
 @end
