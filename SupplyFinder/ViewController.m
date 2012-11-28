@@ -246,7 +246,7 @@
         customPinView.canShowCallout = YES;
         customPinView.draggable = YES;
         
-        
+        customPinView.delegate = self;
         
         if( [[(Pin *)annotation category] intValue] == 0 ){
             
