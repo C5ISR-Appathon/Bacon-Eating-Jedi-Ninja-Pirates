@@ -214,6 +214,7 @@
                     <connections>
                         <outlet property="categoryImage" destination="dKu-ro-9Sg" id="Xns-Re-5s2"/>
                         <outlet property="categorySegment" destination="G7M-In-oR0" id="7ft-5w-Hca"/>
+                        <outlet property="doneButton" destination="ocs-p8-sQg" id="vfL-Ef-8Q1"/>
                         <outlet property="titleField" destination="imx-Ji-OeL" id="UaW-qB-Err"/>
                     </connections>
                 </viewController>
@@ -267,6 +268,7 @@
                 <relationship kind="action" name="segmentChanged:"/>
                 <relationship kind="outlet" name="categoryImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="categorySegment" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="titleField" candidateClass="UITextField"/>
             </relationships>
         </class>
