@@ -9,10 +9,12 @@
 #import "ARViewProtocol.h"
 #import "ARGeoCoordinate.h"
 #import "MarkerView.h"
+#import <QuartzCore/QuartzCore.h>
 
 
-#define BOX_WIDTH 150
-#define BOX_HEIGHT 100
+
+#define BOX_WIDTH 300
+#define BOX_HEIGHT 50
 #define BOX_GAP 10
 #define BOX_ALPHA 0.8
 #define LABEL_HEIGHT 20.0
@@ -36,9 +38,13 @@
         
         [self setUserInteractionEnabled:YES]; // Allow for touches
         
+        //  Rounded corners
+        self.layer.cornerRadius = 5;
+        self.layer.masksToBounds = YES;
+        
 		UILabel *titleLabel	= [[UILabel alloc] initWithFrame:CGRectMake(0, 0, BOX_WIDTH, 20.0)];
-		
-		[titleLabel setBackgroundColor: [UIColor colorWithWhite:.3 alpha:BOX_ALPHA]];
+
+		[titleLabel setBackgroundColor: [UIColor clearColor]];
 		[titleLabel setTextColor:		[UIColor whiteColor]];
 		[titleLabel setTextAlignment:	NSTextAlignmentCenter];
 		[titleLabel setText:			[coordinate title]];
@@ -50,7 +56,7 @@
         
         UILabel *distLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, BOX_WIDTH, LABEL_HEIGHT)];
 		
-		[distLbl setBackgroundColor: [UIColor colorWithWhite:.3 alpha:BOX_ALPHA]];
+		[distLbl setBackgroundColor: [UIColor clearColor]];
 		[distLbl setTextColor:		[UIColor whiteColor]];
 		[distLbl setTextAlignment:	NSTextAlignmentCenter];
 		[distLbl setText:			[NSString stringWithFormat:@"%g", [coordinate distanceFromOrigin]]];
@@ -67,18 +73,20 @@
 		UIImageView *pointView	= [[UIImageView alloc] initWithFrame:CGRectZero];
 		[pointView setImage:[UIImage imageNamed:@"zombie.png"]];
         
-		[pointView setFrame:	CGRectMake((int)(BOX_WIDTH / 2.0 - [pointView image].size.width / 2.0), 
-                                           (int)(BOX_HEIGHT / 2.0 - [pointView image].size.height / 2.0), 
+		[pointView setFrame:	CGRectMake((int)(titleLabel.frame.origin.x - [pointView image].size.width),
+                                           (int)(titleLabel.frame.origin.y + [pointView image].size.height / 2.0),
                                            [pointView image].size.width, 
                                            [pointView image].size.height)];
-		
+        
+        [pointView setBackgroundColor:[UIColor clearColor]];
+        
 		[self addSubview:titleLabel];
         [self addSubview:distLbl];
         
         [self setLblDistance:distLbl];
 
 		[self addSubview:pointView];
-		[self setBackgroundColor:[UIColor clearColor]];
+		[self setBackgroundColor:[UIColor blackColor]];
         
 		[titleLabel release];
         [distLbl release];

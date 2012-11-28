@@ -208,6 +208,8 @@
         
 		[testImage setFrame:CGRectMake(50, 70, 120, 30)];
         
+        [[infovc view] addSubview:testImage];
+        
         
         [[appDelegate window] addSubview:[infovc view]];
         
