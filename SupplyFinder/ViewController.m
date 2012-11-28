@@ -68,6 +68,10 @@
     for (Pin *savedPin in self.pins) {
         [self.mapView addAnnotation:savedPin];
     }
+    
+    self.mapView.showsUserLocation = YES;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -359,7 +363,18 @@
 }
 
 
-
+- (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
+    MKCoordinateRegion region;
+    MKCoordinateSpan span;
+    span.latitudeDelta = 0.095;
+    span.longitudeDelta = 0.095;
+    CLLocationCoordinate2D location;
+    location.latitude = aUserLocation.coordinate.latitude;
+    location.longitude = aUserLocation.coordinate.longitude;
+    region.span = span;
+    region.center = location;
+    [aMapView setRegion:region animated:YES];
+}
 
 
 
