@@ -22,6 +22,8 @@
 		24F034861666513B008ABBCE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F034851666513B008ABBCE /* ViewController.m */; };
 		24F496CE166668090077798F /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F496CB166668090077798F /* Pin.m */; };
 		24F496CF166668090077798F /* SupplyFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24F496CC166668090077798F /* SupplyFinder.xcdatamodeld */; };
+		985E2C9916667FFE00E9BB8B /* PinCreateEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 985E2C9816667FFE00E9BB8B /* PinCreateEditViewController.m */; };
+		985E2C9C166680FF00E9BB8B /* placeholder.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 985E2C9B166680FF00E9BB8B /* placeholder.jpeg */; };
 		C109B6C31666571700D2A140 /* ARCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = C109B6B81666571700D2A140 /* ARCoordinate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C109B6C41666571700D2A140 /* ARGeoCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = C109B6BA1666571700D2A140 /* ARGeoCoordinate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C109B6C51666571700D2A140 /* ARKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C109B6BC1666571700D2A140 /* ARKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -58,6 +60,9 @@
 		24F496CA166668090077798F /* Pin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pin.h; sourceTree = "<group>"; };
 		24F496CB166668090077798F /* Pin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pin.m; sourceTree = "<group>"; };
 		24F496CD166668090077798F /* SupplyFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SupplyFinder.xcdatamodel; sourceTree = "<group>"; };
+		985E2C9716667FFE00E9BB8B /* PinCreateEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinCreateEditViewController.h; sourceTree = "<group>"; };
+		985E2C9816667FFE00E9BB8B /* PinCreateEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinCreateEditViewController.m; sourceTree = "<group>"; };
+		985E2C9B166680FF00E9BB8B /* placeholder.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.jpeg; sourceTree = "<group>"; };
 		C109B6B71666571700D2A140 /* ARCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCoordinate.h; sourceTree = "<group>"; };
 		C109B6B81666571700D2A140 /* ARCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARCoordinate.m; sourceTree = "<group>"; };
 		C109B6B91666571700D2A140 /* ARGeoCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARGeoCoordinate.h; sourceTree = "<group>"; };
@@ -138,6 +143,7 @@
 		24F0346F1666513B008ABBCE /* SupplyFinder */ = {
 			isa = PBXGroup;
 			children = (
+				985E2C9D1666810A00E9BB8B /* Resources */,
 				C109B6D21666599600D2A140 /* AR Files */,
 				C109B6B4166656F000D2A140 /* Other Sources */,
 				24F496CA166668090077798F /* Pin.h */,
@@ -149,6 +155,8 @@
 				24F034841666513B008ABBCE /* ViewController.h */,
 				24F034851666513B008ABBCE /* ViewController.m */,
 				24F034701666513B008ABBCE /* Supporting Files */,
+				985E2C9716667FFE00E9BB8B /* PinCreateEditViewController.h */,
+				985E2C9816667FFE00E9BB8B /* PinCreateEditViewController.m */,
 			);
 			path = SupplyFinder;
 			sourceTree = "<group>";
@@ -165,6 +173,14 @@
 				24F0347F1666513B008ABBCE /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		985E2C9D1666810A00E9BB8B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				985E2C9B166680FF00E9BB8B /* placeholder.jpeg */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		C109B6B4166656F000D2A140 /* Other Sources */ = {
@@ -271,6 +287,7 @@
 				24F0347C1666513B008ABBCE /* Default.png in Resources */,
 				24F0347E1666513B008ABBCE /* Default@2x.png in Resources */,
 				24F034831666513B008ABBCE /* MainStoryboard.storyboard in Resources */,
+				985E2C9C166680FF00E9BB8B /* placeholder.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +311,7 @@
 				C109B6DC16665AFC00D2A140 /* MarkerView.m in Sources */,
 				24F496CE166668090077798F /* Pin.m in Sources */,
 				24F496CF166668090077798F /* SupplyFinder.xcdatamodeld in Sources */,
+				985E2C9916667FFE00E9BB8B /* PinCreateEditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
