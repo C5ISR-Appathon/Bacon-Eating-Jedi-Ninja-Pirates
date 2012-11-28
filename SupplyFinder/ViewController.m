@@ -11,6 +11,7 @@
 #import "ContentManager.h"
 #import "ARKit.h"
 #import "AppDelegate.h"
+#import "CustomAnnotationView.h"
 
 
 @interface ViewController ()
@@ -236,10 +237,11 @@
         
         
         // if an existing pin view was not available, create one
-        MKPinAnnotationView* customPinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PinAnnotationIdentifier];
-        //PinAnnotationView* customPinView = [[PinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PinAnnotationIdentifier];
-        customPinView.pinColor = MKPinAnnotationColorRed;
-        customPinView.animatesDrop = YES;
+        //MKPinAnnotationView* customPinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PinAnnotationIdentifier];
+        //MKAnnotationView *customPinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PinAnnotationIdentifier];
+        CustomAnnotationView *customPinView = [[CustomAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PinAnnotationIdentifier];
+        //customPinView.pinColor = MKPinAnnotationColorRed;
+        //customPinView.animatesDrop = YES;
         customPinView.canShowCallout = YES;
         customPinView.draggable = YES;
         
@@ -285,12 +287,34 @@
 }
 
 
+- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
+    MKAnnotationView *aV;
+    for (aV in views) {
+        CGRect endFrame = aV.frame;
+        
+        aV.frame = CGRectMake(aV.frame.origin.x, aV.frame.origin.y - 230.0, aV.frame.size.width, aV.frame.size.height);
+        
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.45];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        [aV setFrame:endFrame];
+        [UIView commitAnimations];
+        
+    }
+}
+
+
+
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)annotationView didChangeDragState:(MKAnnotationViewDragState)newState fromOldState:(MKAnnotationViewDragState)oldState {
+    
+    
+    NSLog(@"State changed");
+    
     if(newState == MKAnnotationViewDragStateEnding) {
         //Pin dropped, update it's title with current location data
         Pin *pin = (Pin *)annotationView.annotation;
         CLLocation *location = [[CLLocation alloc] initWithLatitude:pin.coordinate.latitude longitude:pin.coordinate.longitude];
-        //[self geocodeLocation:location forAnnotationView:annotationView];
+        [self geocodeLocation:location forAnnotationView:annotationView];
         
     }
 }
