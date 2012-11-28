@@ -119,6 +119,7 @@
         //[(PinCreateEditViewController *)[segue destinationViewController] setSelectedPin:_addedPin];
         
         [[segue destinationViewController] setDelegate:self];
+        [(EditDeleteViewController *)[segue destinationViewController] setPin:_selectedPin];
         
     }
 }
@@ -335,19 +336,19 @@
     return nil;
 }
 
-//-(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
-//{
-//    _selectedPin = (Pin *)[view annotation];
-//}
-//
-//-(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
-//{
-//    _selectedPin = nil;
-//}
+-(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
+{
+    _selectedPin = (Pin *)[view annotation];
+}
+
+-(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view
+{
+    _selectedPin = nil;
+}
 
 -(void)editPin:(Pin *)pin
 {
-    //[self performSegueWithIdentifier:@"addPin" sender:self];
+    [self performSegueWithIdentifier:@"edit" sender:self];
 }
 
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
