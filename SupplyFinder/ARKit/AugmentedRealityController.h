@@ -43,7 +43,7 @@
     
     UILabel				*debugView;
     AVCaptureSession    *captureSession;
-    AVCaptureVideoPreviewLayer *previewLayer;
+    AVCaptureConnection *previewLayer;
     
     UIAccelerometer		*accelerometerManager;
 	CLLocation			*centerLocation;
@@ -67,7 +67,7 @@
 @property (nonatomic, retain) UIView                    *cameraView;
 @property (nonatomic, retain) UIViewController          *rootViewController;
 @property (nonatomic, retain) AVCaptureSession          *captureSession;
-@property (nonatomic, retain) AVCaptureVideoPreviewLayer *previewLayer;
+@property (nonatomic, retain) AVCaptureConnection *previewLayer;
 
 @property (nonatomic, assign) id<ARDelegate> delegate;
 
