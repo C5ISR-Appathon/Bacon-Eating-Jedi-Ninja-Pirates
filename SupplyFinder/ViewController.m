@@ -203,6 +203,12 @@
         [closeARButton addTarget:self action:@selector(closeARButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         [[infovc view] addSubview:closeARButton];
         
+        UIImageView *testImage	= [[UIImageView alloc] initWithFrame:CGRectZero];
+		[testImage setImage:[UIImage imageNamed:@"zombie.png"]];
+        
+		[testImage setFrame:CGRectMake(50, 70, 120, 30)];
+        
+        
         [[appDelegate window] addSubview:[infovc view]];
         
         [self setInfoViewController:infovc];
