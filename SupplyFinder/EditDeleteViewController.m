@@ -37,19 +37,19 @@
     
     if([[_pin category] integerValue] == 0){
         //food
-        [_catImage setImage:[UIImage imageNamed:@"food.png"]];
+        [_catImage setImage:[UIImage imageNamed:@"food@2x.png"]];
     }else if([[_pin category] integerValue] == 1){
         //weapons
-        [_catImage setImage:[UIImage imageNamed:@"gun icon.png"]];
+        [_catImage setImage:[UIImage imageNamed:@"gun icon@2x.png"]];
     }else if([[_pin category] integerValue] == 2){
         //fuel
-        [_catImage setImage:[UIImage imageNamed:@"oil icon.png"]];
+        [_catImage setImage:[UIImage imageNamed:@"oil icon@2x.png"]];
     }else if([[_pin category] integerValue] == 3){
         //zombies
-        [_catImage setImage:[UIImage imageNamed:@"zombie.png"]];
+        [_catImage setImage:[UIImage imageNamed:@"zombie@2x.png"]];
     }else if([[_pin category] integerValue] == 4){
         //zombies
-        [_catImage setImage:[UIImage imageNamed:@"companionship.png"]];
+        [_catImage setImage:[UIImage imageNamed:@"companionship@2x.png"]];
     }
     
 }
@@ -83,19 +83,19 @@
     
     if(selectedIndex == 0){
         //food
-        [_catImage setImage:[UIImage imageNamed:@"food.png"]];
+        [_catImage setImage:[UIImage imageNamed:@"food@2x.png"]];
     }else if(selectedIndex == 1){
         //weapons
-        [_catImage setImage:[UIImage imageNamed:@"gun icon.png"]];
+        [_catImage setImage:[UIImage imageNamed:@"gun icon@2x.png"]];
     }else if(selectedIndex == 2){
         //fuel
-        [_catImage setImage:[UIImage imageNamed:@"oil icon.png"]];
+        [_catImage setImage:[UIImage imageNamed:@"oil icon@2x.png"]];
     }else if(selectedIndex == 3){
         //zombies
-        [_catImage setImage:[UIImage imageNamed:@"zombie.png"]];
+        [_catImage setImage:[UIImage imageNamed:@"zombie@2x.png"]];
     }else if(selectedIndex == 4){
         //zombies
-        [_catImage setImage:[UIImage imageNamed:@"companionship.png"]];
+        [_catImage setImage:[UIImage imageNamed:@"companionship@2x.png"]];
     }
     
 }

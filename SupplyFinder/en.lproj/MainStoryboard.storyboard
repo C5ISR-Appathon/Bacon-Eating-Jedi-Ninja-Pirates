@@ -114,7 +114,7 @@
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="UDM-wP-DQ6" firstAttribute="trailing" secondItem="ty9-Ec-Svx" secondAttribute="trailing" type="default" id="4SC-un-3WJ"/>
                             <constraint firstItem="LNF-p0-dyH" firstAttribute="trailing" secondItem="ty9-Ec-Svx" secondAttribute="trailing" type="default" id="9cV-BC-mC4"/>
@@ -195,7 +195,7 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="G7M-In-oR0" firstAttribute="top" secondItem="dKu-ro-9Sg" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1LW-A9-BAm"/>
                             <constraint firstItem="dKu-ro-9Sg" firstAttribute="leading" secondItem="xqP-sI-80V" secondAttribute="leading" constant="91" id="4pW-aK-A8K"/>

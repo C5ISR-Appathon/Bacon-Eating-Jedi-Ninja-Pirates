@@ -55,19 +55,19 @@
     
     if(selectedIndex == 0){
         //food
-        [_categoryImage setImage:[UIImage imageNamed:@"food.png"]];
+        [_categoryImage setImage:[UIImage imageNamed:@"food@2x.png"]];
     }else if(selectedIndex == 1){
         //weapons
-        [_categoryImage setImage:[UIImage imageNamed:@"gun icon.png"]];
+        [_categoryImage setImage:[UIImage imageNamed:@"gun icon@2x.png"]];
     }else if(selectedIndex == 2){
         //fuel
-        [_categoryImage setImage:[UIImage imageNamed:@"oil icon.png"]];
+        [_categoryImage setImage:[UIImage imageNamed:@"oil icon@2x.png"]];
     }else if(selectedIndex == 3){
         //zombies
-        [_categoryImage setImage:[UIImage imageNamed:@"zombie.png"]];
+        [_categoryImage setImage:[UIImage imageNamed:@"zombie@2x.png"]];
     }else if(selectedIndex == 4){
         //zombies
-        [_categoryImage setImage:[UIImage imageNamed:@"companionship.png"]];
+        [_categoryImage setImage:[UIImage imageNamed:@"companionship@2x.png"]];
     }
 }
 
