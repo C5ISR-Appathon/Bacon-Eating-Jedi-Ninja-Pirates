@@ -10,8 +10,6 @@
 		248C6010166654F6002743D0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 248C600F166654F6002743D0 /* MapKit.framework */; };
 		248C6016166656D0002743D0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 248C6015166656D0002743D0 /* CoreLocation.framework */; };
 		248C601816665748002743D0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 248C601716665748002743D0 /* CoreData.framework */; };
-		248C601B166658C1002743D0 /* SupplyFinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 248C6019166658C1002743D0 /* SupplyFinder.xcdatamodeld */; };
-		248C601E16666588002743D0 /* Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 248C601D16666588002743D0 /* Pin.m */; };
 		24F0346A1666513B008ABBCE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F034691666513B008ABBCE /* UIKit.framework */; };
 		24F0346C1666513B008ABBCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F0346B1666513B008ABBCE /* Foundation.framework */; };
 		24F0346E1666513B008ABBCE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F0346D1666513B008ABBCE /* CoreGraphics.framework */; };
@@ -22,15 +20,23 @@
 		24F0347E1666513B008ABBCE /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F0347D1666513B008ABBCE /* Default@2x.png */; };
 		24F034831666513B008ABBCE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24F034811666513B008ABBCE /* MainStoryboard.storyboard */; };
 		24F034861666513B008ABBCE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F034851666513B008ABBCE /* ViewController.m */; };
+		C109B6C31666571700D2A140 /* ARCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = C109B6B81666571700D2A140 /* ARCoordinate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C109B6C41666571700D2A140 /* ARGeoCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = C109B6BA1666571700D2A140 /* ARGeoCoordinate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C109B6C51666571700D2A140 /* ARKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C109B6BC1666571700D2A140 /* ARKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C109B6C61666571700D2A140 /* AugmentedRealityController.m in Sources */ = {isa = PBXBuildFile; fileRef = C109B6C01666571700D2A140 /* AugmentedRealityController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C109B6C71666571700D2A140 /* GEOLocations.m in Sources */ = {isa = PBXBuildFile; fileRef = C109B6C21666571700D2A140 /* GEOLocations.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C109B6C91666575F00D2A140 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C109B6C81666575F00D2A140 /* CoreMedia.framework */; };
+		C109B6CB1666576700D2A140 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C109B6CA1666576700D2A140 /* AVFoundation.framework */; };
+		C109B6CD1666576E00D2A140 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C109B6CC1666576E00D2A140 /* QuartzCore.framework */; };
+		C109B6D6166659B600D2A140 /* ARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C109B6D5166659B600D2A140 /* ARViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C109B6DB16665AFC00D2A140 /* ContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C109B6D816665AFC00D2A140 /* ContentManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C109B6DC16665AFC00D2A140 /* MarkerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C109B6DA16665AFC00D2A140 /* MarkerView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		248C600F166654F6002743D0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		248C6015166656D0002743D0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		248C601716665748002743D0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		248C601A166658C1002743D0 /* SupplyFinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SupplyFinder.xcdatamodel; sourceTree = "<group>"; };
-		248C601C16666588002743D0 /* Pin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pin.h; sourceTree = "<group>"; };
-		248C601D16666588002743D0 /* Pin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pin.m; sourceTree = "<group>"; };
 		24F034651666513B008ABBCE /* SupplyFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SupplyFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F034691666513B008ABBCE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		24F0346B1666513B008ABBCE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -47,6 +53,28 @@
 		24F034821666513B008ABBCE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		24F034841666513B008ABBCE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		24F034851666513B008ABBCE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C109B6B71666571700D2A140 /* ARCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCoordinate.h; sourceTree = "<group>"; };
+		C109B6B81666571700D2A140 /* ARCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARCoordinate.m; sourceTree = "<group>"; };
+		C109B6B91666571700D2A140 /* ARGeoCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARGeoCoordinate.h; sourceTree = "<group>"; };
+		C109B6BA1666571700D2A140 /* ARGeoCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARGeoCoordinate.m; sourceTree = "<group>"; };
+		C109B6BB1666571700D2A140 /* ARKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARKit.h; sourceTree = "<group>"; };
+		C109B6BC1666571700D2A140 /* ARKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARKit.m; sourceTree = "<group>"; };
+		C109B6BD1666571700D2A140 /* ARLocationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARLocationDelegate.h; sourceTree = "<group>"; };
+		C109B6BE1666571700D2A140 /* ARViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARViewProtocol.h; sourceTree = "<group>"; };
+		C109B6BF1666571700D2A140 /* AugmentedRealityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AugmentedRealityController.h; sourceTree = "<group>"; };
+		C109B6C01666571700D2A140 /* AugmentedRealityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AugmentedRealityController.m; sourceTree = "<group>"; };
+		C109B6C11666571700D2A140 /* GEOLocations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEOLocations.h; sourceTree = "<group>"; };
+		C109B6C21666571700D2A140 /* GEOLocations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GEOLocations.m; sourceTree = "<group>"; };
+		C109B6C81666575F00D2A140 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		C109B6CA1666576700D2A140 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		C109B6CC1666576E00D2A140 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C109B6D4166659B600D2A140 /* ARViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARViewController.h; sourceTree = "<group>"; };
+		C109B6D5166659B600D2A140 /* ARViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARViewController.m; sourceTree = "<group>"; };
+		C109B6D716665AFC00D2A140 /* ContentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentManager.h; sourceTree = "<group>"; };
+		C109B6D816665AFC00D2A140 /* ContentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentManager.m; sourceTree = "<group>"; };
+		C109B6D916665AFC00D2A140 /* MarkerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkerView.h; sourceTree = "<group>"; };
+		C109B6DA16665AFC00D2A140 /* MarkerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkerView.m; sourceTree = "<group>"; };
+		C109B6DD16665B1600D2A140 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +84,9 @@
 			files = (
 				248C601816665748002743D0 /* CoreData.framework in Frameworks */,
 				248C6016166656D0002743D0 /* CoreLocation.framework in Frameworks */,
+				C109B6CD1666576E00D2A140 /* QuartzCore.framework in Frameworks */,
+				C109B6CB1666576700D2A140 /* AVFoundation.framework in Frameworks */,
+				C109B6C91666575F00D2A140 /* CoreMedia.framework in Frameworks */,
 				248C6010166654F6002743D0 /* MapKit.framework in Frameworks */,
 				24F0346A1666513B008ABBCE /* UIKit.framework in Frameworks */,
 				24F0346C1666513B008ABBCE /* Foundation.framework in Frameworks */,
@@ -88,6 +119,9 @@
 			children = (
 				248C601716665748002743D0 /* CoreData.framework */,
 				248C6015166656D0002743D0 /* CoreLocation.framework */,
+				C109B6C81666575F00D2A140 /* CoreMedia.framework */,
+				C109B6CA1666576700D2A140 /* AVFoundation.framework */,
+				C109B6CC1666576E00D2A140 /* QuartzCore.framework */,
 				248C600F166654F6002743D0 /* MapKit.framework */,
 				24F034691666513B008ABBCE /* UIKit.framework */,
 				24F0346B1666513B008ABBCE /* Foundation.framework */,
@@ -99,15 +133,14 @@
 		24F0346F1666513B008ABBCE /* SupplyFinder */ = {
 			isa = PBXGroup;
 			children = (
+				C109B6D21666599600D2A140 /* AR Files */,
+				C109B6B4166656F000D2A140 /* Other Sources */,
 				24F034781666513B008ABBCE /* AppDelegate.h */,
 				24F034791666513B008ABBCE /* AppDelegate.m */,
 				24F034811666513B008ABBCE /* MainStoryboard.storyboard */,
 				24F034841666513B008ABBCE /* ViewController.h */,
 				24F034851666513B008ABBCE /* ViewController.m */,
 				24F034701666513B008ABBCE /* Supporting Files */,
-				248C6019166658C1002743D0 /* SupplyFinder.xcdatamodeld */,
-				248C601C16666588002743D0 /* Pin.h */,
-				248C601D16666588002743D0 /* Pin.m */,
 			);
 			path = SupplyFinder;
 			sourceTree = "<group>";
@@ -124,6 +157,55 @@
 				24F0347F1666513B008ABBCE /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C109B6B4166656F000D2A140 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C109B6B61666571700D2A140 /* ARKit */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		C109B6B61666571700D2A140 /* ARKit */ = {
+			isa = PBXGroup;
+			children = (
+				C109B6B71666571700D2A140 /* ARCoordinate.h */,
+				C109B6B81666571700D2A140 /* ARCoordinate.m */,
+				C109B6B91666571700D2A140 /* ARGeoCoordinate.h */,
+				C109B6BA1666571700D2A140 /* ARGeoCoordinate.m */,
+				C109B6BB1666571700D2A140 /* ARKit.h */,
+				C109B6BC1666571700D2A140 /* ARKit.m */,
+				C109B6BD1666571700D2A140 /* ARLocationDelegate.h */,
+				C109B6BE1666571700D2A140 /* ARViewProtocol.h */,
+				C109B6BF1666571700D2A140 /* AugmentedRealityController.h */,
+				C109B6C01666571700D2A140 /* AugmentedRealityController.m */,
+				C109B6C11666571700D2A140 /* GEOLocations.h */,
+				C109B6C21666571700D2A140 /* GEOLocations.m */,
+			);
+			path = ARKit;
+			sourceTree = "<group>";
+		};
+		C109B6D21666599600D2A140 /* AR Files */ = {
+			isa = PBXGroup;
+			children = (
+				C109B6DE16665B4400D2A140 /* Managers */,
+				C109B6D916665AFC00D2A140 /* MarkerView.h */,
+				C109B6DA16665AFC00D2A140 /* MarkerView.m */,
+				C109B6D4166659B600D2A140 /* ARViewController.h */,
+				C109B6D5166659B600D2A140 /* ARViewController.m */,
+			);
+			name = "AR Files";
+			sourceTree = "<group>";
+		};
+		C109B6DE16665B4400D2A140 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C109B6DD16665B1600D2A140 /* SynthesizeSingleton.h */,
+				C109B6D716665AFC00D2A140 /* ContentManager.h */,
+				C109B6D816665AFC00D2A140 /* ContentManager.m */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,8 +276,14 @@
 				24F034761666513B008ABBCE /* main.m in Sources */,
 				24F0347A1666513B008ABBCE /* AppDelegate.m in Sources */,
 				24F034861666513B008ABBCE /* ViewController.m in Sources */,
-				248C601B166658C1002743D0 /* SupplyFinder.xcdatamodeld in Sources */,
-				248C601E16666588002743D0 /* Pin.m in Sources */,
+				C109B6C31666571700D2A140 /* ARCoordinate.m in Sources */,
+				C109B6C41666571700D2A140 /* ARGeoCoordinate.m in Sources */,
+				C109B6C51666571700D2A140 /* ARKit.m in Sources */,
+				C109B6C61666571700D2A140 /* AugmentedRealityController.m in Sources */,
+				C109B6C71666571700D2A140 /* GEOLocations.m in Sources */,
+				C109B6D6166659B600D2A140 /* ARViewController.m in Sources */,
+				C109B6DB16665AFC00D2A140 /* ContentManager.m in Sources */,
+				C109B6DC16665AFC00D2A140 /* MarkerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,19 +403,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		248C6019166658C1002743D0 /* SupplyFinder.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				248C601A166658C1002743D0 /* SupplyFinder.xcdatamodel */,
-			);
-			currentVersion = 248C601A166658C1002743D0 /* SupplyFinder.xcdatamodel */;
-			path = SupplyFinder.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 24F0345C1666513B008ABBCE /* Project object */;
 }
