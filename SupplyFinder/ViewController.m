@@ -11,9 +11,12 @@
 #import "ContentManager.h"
 #import "ARKit.h"
 #import "AppDelegate.h"
+#import "CustomAnnotationView.h"
 
 
 @interface ViewController ()
+
+@property (strong, nonatomic) Pin *addedPin;
 
 @end
 
@@ -87,50 +90,34 @@
     }
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if( [[segue identifier] isEqualToString:@"addPin"] ){
+        //[(PinCreateEditViewController *)[segue destinationViewController] setSelectedPin:_addedPin];
+        
+        [[segue destinationViewController] setDelegate:self];
+    }
+}
 
 - (IBAction)addPointButtonClicked {
     
-    [self addMarkerForAddress:@"Charleston, SC"];
     
+    //[self addMarkerForAddress:@"Charleston, SC"];
+    
+    [self performSegueWithIdentifier:@"addPin" sender:self];
 }
-#pragma mark - Augmented Reality 
--(void)addMarkerForAddress:(NSString *)address
+
+-(void)addMarker:(Pin *)thePin
 {
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder geocodeAddressString:address completionHandler:^(NSArray* placemarks, NSError* error){
-        
-        // TODO: Handle multiple results. (Show all results or select closest result)
-        if (placemarks && placemarks.count > 0) {
-            CLPlacemark *topResult = [placemarks objectAtIndex:0];
-            
-            // Create a MLPlacemark
-            //MKPlacemark *placemark = [[MKPlacemark alloc] initWithPlacemark:topResult];
-            
-            NSManagedObjectContext *context = self.managedObjectContext;
-            Pin *newPin = [NSEntityDescription insertNewObjectForEntityForName:@"Pin" inManagedObjectContext:context];
-            newPin.title = [NSString stringWithFormat:@"%@, %@", topResult.locality, topResult.administrativeArea]; //city,state
-            newPin.coordinate = topResult.location.coordinate;
-            
-            NSError *error = nil;
-            if (![context save:&error]) {
-                // Replace this implementation with code to handle the error appropriately.
-                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-                abort();
-            }
-            
-            //Add the marker
-            [self.mapView addAnnotation:newPin];
-            
-            if (!_pins) {
-                _pins = [NSMutableArray arrayWithCapacity:5];
-            }
-            
-            [_pins addObject:newPin];
-            
-        }
-        
-    }];
+    //Add the marker
+    [self.mapView addAnnotation:thePin];
+    
+    
+    if (!_pins) {
+        _pins = [NSMutableArray arrayWithCapacity:5];
+    }
+    
+    [_pins addObject:thePin];
 }
 
 - (IBAction)startAugmentedReality:(id)sender
@@ -250,45 +237,82 @@
     {
         // try to dequeue an existing pin view first
         static NSString* PinAnnotationIdentifier = @"pinAnnotationIdentifier";
-        MKPinAnnotationView* pinView = (MKPinAnnotationView *)
-        //PinAnnotationView* pinView = (PinAnnotationView *)
-        [theMapView dequeueReusableAnnotationViewWithIdentifier:PinAnnotationIdentifier];
-        if (!pinView)
-        {
-            // if an existing pin view was not available, create one
-            MKPinAnnotationView* customPinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PinAnnotationIdentifier];
-            //PinAnnotationView* customPinView = [[PinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PinAnnotationIdentifier];
-            customPinView.pinColor = MKPinAnnotationColorRed;
-            customPinView.animatesDrop = YES;
-            customPinView.canShowCallout = YES;
-            customPinView.draggable = YES;
+        
+        
+        // if an existing pin view was not available, create one
+        //MKPinAnnotationView* customPinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PinAnnotationIdentifier];
+        //MKAnnotationView *customPinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PinAnnotationIdentifier];
+        CustomAnnotationView *customPinView = [[CustomAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PinAnnotationIdentifier];
+        //customPinView.pinColor = MKPinAnnotationColorRed;
+        //customPinView.animatesDrop = YES;
+        customPinView.canShowCallout = YES;
+        customPinView.draggable = YES;
+        
+        
+        
+        if( [[(Pin *)annotation category] intValue] == 0 ){
             
-            // add a detail disclosure button to the callout which will open a new view controller page
-            //
-            // note: you can assign a specific call out accessory view, or as MKMapViewDelegate you can implement:
-            //  - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
-            //
+            customPinView.image = [UIImage imageNamed:@"food.png"];
+
+        }else if( [[(Pin *)annotation category] intValue] == 1 ){
             
-            /*UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-             [rightButton addTarget:self
-             action:@selector(showDetails:)
-             forControlEvents:UIControlEventTouchUpInside];
-             customPinView.rightCalloutAccessoryView = rightButton;
-             */
+            customPinView.image = [UIImage imageNamed:@"gun icon.png"];
             
-            return customPinView;
+        }else if( [[(Pin *)annotation category] intValue] == 2 ){
+            
+            customPinView.image = [UIImage imageNamed:@"oil icon.png"];
+            
+        }else if( [[(Pin *)annotation category] intValue] == 3 ){
+            
+            customPinView.image = [UIImage imageNamed:@"zombie.png"];
+            
         }
-        else
-        {
-            pinView.annotation = annotation;
-        }
-        return pinView;
+        
+        
+        // add a detail disclosure button to the callout which will open a new view controller page
+        //
+        // note: you can assign a specific call out accessory view, or as MKMapViewDelegate you can implement:
+        //  - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
+        //
+        
+        /*UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+         [rightButton addTarget:self
+         action:@selector(showDetails:)
+         forControlEvents:UIControlEventTouchUpInside];
+         customPinView.rightCalloutAccessoryView = rightButton;
+         */
+        
+        return customPinView;
+        
+        
     }
     return nil;
 }
 
 
+- (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views {
+    MKAnnotationView *aV;
+    for (aV in views) {
+        CGRect endFrame = aV.frame;
+        
+        aV.frame = CGRectMake(aV.frame.origin.x, aV.frame.origin.y - 230.0, aV.frame.size.width, aV.frame.size.height);
+        
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.45];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        [aV setFrame:endFrame];
+        [UIView commitAnimations];
+        
+    }
+}
+
+
+
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)annotationView didChangeDragState:(MKAnnotationViewDragState)newState fromOldState:(MKAnnotationViewDragState)oldState {
+    
+    
+    NSLog(@"State changed");
+    
     if(newState == MKAnnotationViewDragStateEnding) {
         //Pin dropped, update it's title with current location data
         Pin *pin = (Pin *)annotationView.annotation;
@@ -327,18 +351,18 @@
 }
 
 
-- (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
-    MKCoordinateRegion region;
-    MKCoordinateSpan span;
-    span.latitudeDelta = 0.095;
-    span.longitudeDelta = 0.095;
-    CLLocationCoordinate2D location;
-    location.latitude = aUserLocation.coordinate.latitude;
-    location.longitude = aUserLocation.coordinate.longitude;
-    region.span = span;
-    region.center = location;
-    [aMapView setRegion:region animated:YES];
-}
+//- (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
+//    MKCoordinateRegion region;
+//    MKCoordinateSpan span;
+//    span.latitudeDelta = 0.095;
+//    span.longitudeDelta = 0.095;
+//    CLLocationCoordinate2D location;
+//    location.latitude = aUserLocation.coordinate.latitude;
+//    location.longitude = aUserLocation.coordinate.longitude;
+//    region.span = span;
+//    region.center = location;
+//    [aMapView setRegion:region animated:YES];
+//}
 
 
 

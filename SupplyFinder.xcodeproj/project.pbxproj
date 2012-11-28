@@ -20,6 +20,7 @@
 		24A6847416668CF4006C3E7D /* gun icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A6846F16668CF4006C3E7D /* gun icon@2x.png */; };
 		24A6847516668CF4006C3E7D /* oil icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A6847016668CF4006C3E7D /* oil icon@2x.png */; };
 		24A6847616668CF4006C3E7D /* zombie@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24A6847116668CF4006C3E7D /* zombie@2x.png */; };
+		24A6847D1666A0D1006C3E7D /* CustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A6847C1666A0D1006C3E7D /* CustomAnnotationView.m */; };
 		24F0346A1666513B008ABBCE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F034691666513B008ABBCE /* UIKit.framework */; };
 		24F0346C1666513B008ABBCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F0346B1666513B008ABBCE /* Foundation.framework */; };
 		24F0346E1666513B008ABBCE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F0346D1666513B008ABBCE /* CoreGraphics.framework */; };
@@ -61,6 +62,8 @@
 		24A6846F16668CF4006C3E7D /* gun icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gun icon@2x.png"; sourceTree = "<group>"; };
 		24A6847016668CF4006C3E7D /* oil icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "oil icon@2x.png"; sourceTree = "<group>"; };
 		24A6847116668CF4006C3E7D /* zombie@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zombie@2x.png"; sourceTree = "<group>"; };
+		24A6847B1666A0D1006C3E7D /* CustomAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotationView.h; sourceTree = "<group>"; };
+		24A6847C1666A0D1006C3E7D /* CustomAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotationView.m; sourceTree = "<group>"; };
 		24F034651666513B008ABBCE /* SupplyFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SupplyFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F034691666513B008ABBCE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		24F0346B1666513B008ABBCE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -177,6 +180,8 @@
 				24F034701666513B008ABBCE /* Supporting Files */,
 				985E2C9716667FFE00E9BB8B /* PinCreateEditViewController.h */,
 				985E2C9816667FFE00E9BB8B /* PinCreateEditViewController.m */,
+				24A6847B1666A0D1006C3E7D /* CustomAnnotationView.h */,
+				24A6847C1666A0D1006C3E7D /* CustomAnnotationView.m */,
 			);
 			path = SupplyFinder;
 			sourceTree = "<group>";
@@ -352,6 +357,7 @@
 				24F496CF166668090077798F /* SupplyFinder.xcdatamodeld in Sources */,
 				985E2C9916667FFE00E9BB8B /* PinCreateEditViewController.m in Sources */,
 				985E2CA01666853600E9BB8B /* Pin.m in Sources */,
+				24A6847D1666A0D1006C3E7D /* CustomAnnotationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
